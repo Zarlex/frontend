@@ -1,0 +1,7 @@
+body{
+  font-size: 30px;
+
+  *[ng-view]{
+    @import "../../start/styles/start";
+  }
+}
