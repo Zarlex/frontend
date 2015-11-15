@@ -1,24 +1,108 @@
+$zdBlack: #38404c;
+
 html,
-body{
+body {
   padding: 0;
   margin: 0;
   font-family: Helvetica, sans-serif;
-  color: #38404c;
+  color: $zdBlack;
 }
 
-body{
+body {
 
-  *[ng-view]{
+  *[ng-view] {
     @import "../../start/styles/start";
   }
 
-  .center-items{
+  .center-items {
     display: flex;
     align-items: center;
   }
 
-  h2{
+  h2 {
     font-size: 35pt;
   }
 
+  header {
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    z-index: 9;
+  }
+
+  .zd-menu-corner {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    transition: all 1s ease;
+
+    #cornerSvg{
+      fill: $zdBlack;
+    }
+
+    .menu-icon {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      .burger {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .topping{
+          position: relative;
+          transition: all 1s ease;
+          width: 30px;
+          height: 2px;
+          margin: 5px 0;
+          background: white;
+
+          &.line-1{
+            transform: rotate(0);
+            &.top{
+              top: 0px;
+            }
+          }
+
+          &.line-2{
+            transform: rotate(0);
+
+            &.top{
+              top: 0px;
+            }
+            &.bottom{
+              top: 0px;
+            }
+          }
+        }
+      }
+    }
+
+    &.opened {
+      width: 180%;
+      height: 180%;
+
+      .menu-icon .burger {
+        .topping{
+          &.line-1{
+            transform: rotate(45deg);
+
+            &.top{
+              top: 7px;
+            }
+          }
+          &.line-2{
+            transform: rotate(-45deg);
+
+            &.top{
+              top: -7px;
+            }
+            &.bottom{
+              top: -14px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

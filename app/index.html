@@ -42,7 +42,7 @@
 
 
 <div ng-controller="MainController as ctrl">
-    <header>Zero Day</header>
+    <header ng-include="'modules/main/templates/_header.html'"></header>
 
     <div ng-view zd-append-class-according-to-route></div>
 
@@ -69,6 +69,7 @@
 <script src="modules/main/controllers/main_controller.js"></script>
 
 <script src="modules/main/directives/main_directives.js"></script>
+<script src="modules/main/directives/menu_directive.js"></script>
 
 <script src="modules/main/constants/config_constant.js"></script>
 
