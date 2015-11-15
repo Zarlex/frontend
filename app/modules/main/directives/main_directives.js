@@ -4,7 +4,7 @@
 'use strict';
 
 var getRelativeScrollPos = function () {
-  var screenHeight = $(window).height(),
+  var screenHeight = angular.element(window).height(),
     scrollPos = window.scrollY;
   return scrollPos / screenHeight * 100;
 };
@@ -19,7 +19,7 @@ angular.module('ZeroDay')
           elm.addClass(current.cssClasses);
         });
       }
-    }
+    };
   })
 
   .directive('zdSetBackgroundPositionOnScroll', function () {
@@ -42,7 +42,7 @@ angular.module('ZeroDay')
 
         angular.element(window).on('scroll', throttled);
       }
-    }
+    };
   })
 
   .directive('zdFadeToColorOnScroll', function () {
@@ -69,5 +69,5 @@ angular.module('ZeroDay')
         });
         angular.element(window).on('scroll', throttled);
       }
-    }
+    };
   });
