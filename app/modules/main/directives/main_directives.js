@@ -3,6 +3,12 @@
  */
 'use strict';
 
+var getRelativeScrollPos = function () {
+  var screenHeight = $(window).height(),
+    scrollPos = window.scrollY;
+  return scrollPos / screenHeight * 100;
+};
+
 angular.module('ZeroDay')
   .directive('zdAppendClassAccordingToRoute', function () {
     return {
@@ -13,5 +19,55 @@ angular.module('ZeroDay')
           elm.addClass(current.cssClasses);
         });
       }
-    };
+    }
+  })
+
+  .directive('zdSetBackgroundPositionOnScroll', function () {
+    return {
+      scope: {
+        parallaxOffset: '='
+      },
+      link: function (scope, el) {
+        var setBackgroundPosition = function (posY) {
+          el.css('background-position', '0 ' + posY + ', 0 0');
+        };
+
+        var throttled = _.throttle(function () {
+          var relativeScrollPos = getRelativeScrollPos(),
+            parallaxOffset = scope.parallaxOffset || 1,
+            backgroundPosY = relativeScrollPos * parallaxOffset * -1;
+
+          setBackgroundPosition(backgroundPosY + '%');
+        }, 10);
+
+        angular.element(window).on('scroll', throttled);
+      }
+    }
+  })
+
+  .directive('zdFadeToColorOnScroll', function () {
+    return {
+      scope: {
+        maxOpactiy: '=',
+        color: '@'
+      },
+      link: function (scope, el) {
+        var setBackgroundColor = function(color, opacity){
+          el.css({
+            backgroundColor: color,
+            opacity: opacity
+          });
+        };
+
+        var throttled = _.throttle(function () {
+          var relativeScrollPos = getRelativeScrollPos(),
+              opacityVal = relativeScrollPos > scope.maxOpactiy ? scope.maxOpactiy : relativeScrollPos,
+              color = scope.color || 'white';
+
+          setBackgroundColor(color,opacityVal/100 );
+
+        });
+        angular.element(window).on('scroll', throttled);
+      }
+    }
   });
