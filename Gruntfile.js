@@ -266,7 +266,7 @@
                 src: [
                   '*.*',
                   'fonts/**/{,*/}*',
-                  'images/**/{,*/}*',
+                  'modules/**/images/**/{,*/}*',
                   'styles/*.css',
                   'enrollment/**/{,*/}*',
                   '!styles/main.css'
