@@ -425,8 +425,8 @@
       'uglify',
       'copy:buildToDist',
       'rev:dist',
-      'manifest',
-      'replace:addCacheManifest',
+      //'manifest',
+      //'replace:addCacheManifest',
       'usemin',
       'clean:tmp'
     ]);
