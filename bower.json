@@ -5,6 +5,7 @@
     "angular": "1.4.7",
     "angular-animate": "1.4.7",
     "angular-route": "1.4.7",
+    "jquery": "2.0.0",
     "backbone": "~1.1.2",
     "json3": "~3.2.4",
     "es5-shim": "~2.0.8",
