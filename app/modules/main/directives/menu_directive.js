@@ -7,6 +7,7 @@ angular.module('ZeroDay')
   .directive('zdMenuCorner', function () {
     return {
       templateUrl: 'modules/main/directives/templates/zd_menu_corner.html',
+      transclude: true,
       link: function(scope){
         scope.viewModel = {
           isOpened: false

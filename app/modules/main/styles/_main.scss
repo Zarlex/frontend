@@ -23,6 +23,12 @@ body {
     font-size: 35pt;
   }
 
+  ul.no-list-style{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
   header {
     position: fixed;
     height: 50px;
@@ -45,9 +51,6 @@ body {
       left: 10px;
       top: 10px;
       .burger {
-        list-style: none;
-        padding: 0;
-        margin: 0;
 
         .topping{
           position: relative;
@@ -76,6 +79,43 @@ body {
           }
         }
       }
+    }
+
+    .menu-content{
+      position: absolute;
+      color: white;
+      left: 30px;
+      width: 50%;
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      top: 100px;
+
+      ul{
+        display: flex;
+        flex-direction: column;
+        font-size: 50px;
+        text-transform: uppercase;
+      }
+
+      //** ANIMATION START **/
+      &.ng-leave,
+      &.ng-animate.ng-enter{
+        @include single-transition(all, 0.8s, ease);
+      }
+
+      // IN
+      &.ng-animate.ng-enter.ng-enter-active,
+      &.ng-leave{
+        opacity: 1;
+      }
+
+      // OUT
+      &.ng-animate.ng-enter,
+      &.ng-leave.ng-leave-active{
+        opacity: 0;
+      }
+      //** ANIMATION END **/
     }
 
     &.opened {
