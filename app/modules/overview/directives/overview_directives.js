@@ -1,14 +1,14 @@
 /**
  * Created by zarges on 21/11/15.
  */
+'use strict';
+
 angular.module('ZeroDay.Overview')
-  .directive('zdEntryFullScreenOnClick', function ($animate) {
+  .directive('zdEntryFullScreenOnClick', function () {
     return {
       link: function (scope, el) {
 
-        var done = function(){
-          console.log('DONE')
-        };
+        var done = function(){};
 
         el.on('click', function(){
           var prevSibling = el.prev(),
@@ -37,7 +37,7 @@ angular.module('ZeroDay.Overview')
             el.addClass('active entry-next');
           }
 
-          el.on('webkitTransitionEnd transitionEnd', done)
+          el.on('webkitTransitionEnd transitionEnd', done);
 
         });
       }
