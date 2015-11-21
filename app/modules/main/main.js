@@ -7,7 +7,8 @@ angular.module('ZeroDay', [
     'ngRoute',
     'ngAnimate',
 
-    'ZeroDay.Start'
+    'ZeroDay.Start',
+    'ZeroDay.Overview'
   ])
 
   .config(function ($routeProvider) {

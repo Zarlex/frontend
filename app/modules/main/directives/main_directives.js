@@ -70,4 +70,23 @@ angular.module('ZeroDay')
         angular.element(window).on('scroll', throttled);
       }
     };
+  })
+
+  .directive('zdCalculateStaticWidth', function () {
+    return {
+      link: function (scope, el, attrs) {
+        var setWidth = function(){
+          var windowWidth = angular.element(window).width(),
+            factor = parseInt(attrs.zdCalculateStaticWidth,10),
+            width = windowWidth * (factor / 100);
+
+          el.css('width',width);
+        };
+
+        var throtteledFn = _.throttle(setWidth,1000);
+
+        setWidth();
+        angular.element(window).resize(throtteledFn)
+      }
+    };
   });
