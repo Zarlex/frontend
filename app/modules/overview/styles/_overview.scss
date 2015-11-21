@@ -40,10 +40,12 @@
         display: flex;
         flex-direction: column;
         white-space: nowrap;
+        @include single-transition(opacity,0.5s, ease);
 
         object{
           width: 100%;
           flex-basis: 85%;
+          pointer-events: none;
         }
 
         .title{
@@ -66,7 +68,10 @@
 
       &:hover{
         flex-basis: 75%;
+      }
 
+      &:hover,
+      &.active{
         .holder{
 
           .title{
@@ -78,7 +83,35 @@
         }
       }
 
+      &.active{
+        &.entries-prev-next{
+          flex-basis: 96%;
+        }
 
+        &.entry-prev,
+        &.entry-next{
+          flex-basis: 98%;
+        }
+
+        .holder{
+          width: 100% !important;
+        }
+      }
+
+      &.no-flex,
+      &.min-flex{
+        .holder{
+          opacity: 0;
+        }
+      }
+
+      &.no-flex{
+        flex-basis: 0;
+      }
+
+      &.min-flex{
+        flex-basis: 2%;
+      }
     }
   }
 
