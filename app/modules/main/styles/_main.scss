@@ -12,6 +12,17 @@ body {
 
   *[ng-view] {
     @import "../../start/styles/start";
+    @import "../../overview/styles/overview";
+  }
+
+  *[ng-click] {
+    cursor: pointer;
+  }
+
+  .full-screen-view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 
   .center-items {
@@ -23,7 +34,7 @@ body {
     font-size: 35pt;
   }
 
-  ul.no-list-style{
+  ul.no-list-style {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -42,7 +53,7 @@ body {
     height: 100px;
     transition: all 1s ease;
 
-    #cornerSvg{
+    #cornerSvg {
       fill: $zdBlack;
     }
 
@@ -52,7 +63,7 @@ body {
       top: 10px;
       .burger {
 
-        .topping{
+        .topping {
           position: relative;
           transition: all 1s ease;
           width: 30px;
@@ -60,20 +71,20 @@ body {
           margin: 5px 0;
           background: white;
 
-          &.line-1{
+          &.line-1 {
             transform: rotate(0);
-            &.top{
+            &.top {
               top: 0px;
             }
           }
 
-          &.line-2{
+          &.line-2 {
             transform: rotate(0);
 
-            &.top{
+            &.top {
               top: 0px;
             }
-            &.bottom{
+            &.bottom {
               top: 0px;
             }
           }
@@ -81,7 +92,7 @@ body {
       }
     }
 
-    .menu-content{
+    .menu-content {
       position: absolute;
       color: white;
       left: 30px;
@@ -91,7 +102,7 @@ body {
       justify-content: center;
       top: 100px;
 
-      ul{
+      ul {
         display: flex;
         flex-direction: column;
         font-size: 50px;
@@ -100,19 +111,19 @@ body {
 
       //** ANIMATION START **/
       &.ng-leave,
-      &.ng-animate.ng-enter{
+      &.ng-animate.ng-enter {
         @include single-transition(all, 0.8s, ease);
       }
 
       // IN
       &.ng-animate.ng-enter.ng-enter-active,
-      &.ng-leave{
+      &.ng-leave {
         opacity: 1;
       }
 
       // OUT
       &.ng-animate.ng-enter,
-      &.ng-leave.ng-leave-active{
+      &.ng-leave.ng-leave-active {
         opacity: 0;
       }
       //** ANIMATION END **/
@@ -123,21 +134,21 @@ body {
       height: 180%;
 
       .menu-icon .burger {
-        .topping{
-          &.line-1{
+        .topping {
+          &.line-1 {
             transform: rotate(45deg);
 
-            &.top{
+            &.top {
               top: 7px;
             }
           }
-          &.line-2{
+          &.line-2 {
             transform: rotate(-45deg);
 
-            &.top{
+            &.top {
               top: -7px;
             }
-            &.bottom{
+            &.bottom {
               top: -14px;
             }
           }
