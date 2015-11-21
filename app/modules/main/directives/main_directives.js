@@ -86,7 +86,7 @@ angular.module('ZeroDay')
         var throtteledFn = _.throttle(setWidth,1000);
 
         setWidth();
-        angular.element(window).resize(throtteledFn)
+        angular.element(window).resize(throtteledFn);
       }
     };
   });
