@@ -267,6 +267,7 @@
                   '*.*',
                   'fonts/**/{,*/}*',
                   'modules/**/images/**/{,*/}*',
+                  'modules/**/assets/**/{,*/}*',
                   'styles/*.css',
                   'enrollment/**/{,*/}*',
                   '!styles/main.css'
