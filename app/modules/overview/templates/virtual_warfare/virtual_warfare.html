@@ -1,0 +1,42 @@
+<div class="navigator full-screen-view center-items">
+
+  <div class="entries-holder locked">
+
+    <div class="entry warfare active entry-next"
+         zd-fade-to-color-on-scroll color="#fff">
+      <div class="holder" zd-calculate-static-width="50%">
+        <object data="modules/overview/assets/warfare_logo.svg" type="image/svg+xml">
+          <img src="modules/overview/assets/warfare_logo_fallback.png"/>
+        </object>
+        <div class="title">
+          <h2>Virtual Warfare</h2>
+
+          <p class="copy">Das Virtuelle Schlachtfeld</p>
+        </div>
+      </div>
+
+      <div class="content-holder"
+           ng-include="'modules/overview/templates/virtual_warfare/_content.html'"></div>
+
+      <div class="button-holder">
+
+        <button class="btn btn-nav">Previous</button>
+        <button class="btn btn-nav btn-impact">Next</button>
+
+      </div>
+
+    </div>
+    <div class="entry impacts min-flex" zd-entry-full-screen-on-click>
+      <div class="holder" zd-calculate-static-width="50%">
+        <object data="modules/overview/assets/impacts_logo.svg" type="image/svg+xml">
+          <img src="modules/overview/assets/impacts_logo_fallback.png"/>
+        </object>
+        <div class="title">
+          <h2>Real Impacts</h2>
+
+          <p class="copy">Auswirkungen auf die reale Welt</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

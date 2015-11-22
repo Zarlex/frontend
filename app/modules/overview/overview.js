@@ -15,6 +15,14 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
         controllerAs: 'overviewCtrl',
         resolve: $injector.get('OverviewControllerResolver'),
         cssClasses: 'overview'
+      })
+
+      .when('/overview/virtual-warfare', {
+        templateUrl: 'modules/overview/templates/virtual_warfare/virtual_warfare.html',
+        controller: 'VirtualWarfareController',
+        controllerAs: 'virtualWarfareCtrl',
+        resolve: $injector.get('VirtualWarfareControllerResolver'),
+        cssClasses: 'overview virtual-warfare'
       });
 
   });
