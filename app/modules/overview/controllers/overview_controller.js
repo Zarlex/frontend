@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('ZeroDay.Start')
+angular.module('ZeroDay.Overview')
   .controller('OverviewController', function() {})
 
   .constant('OverviewControllerResolver', {});
