@@ -1,4 +1,5 @@
 $zdBlack: #38404c;
+$zdPrimary: #05ee66;
 
 html,
 body {
@@ -45,6 +46,19 @@ body {
     height: 50px;
     width: 100%;
     z-index: 9;
+  }
+
+  .btn{
+    border: none;
+    color: white;
+    background: white;
+    font-size: 16pt;
+    padding: 10px;
+    color: black;
+
+    &.primary{
+      background: $zdPrimary;
+    }
   }
 
   .zd-menu-corner {
