@@ -17,4 +17,10 @@ angular.module('ZeroDay', [
 
       .when('/', {redirectTo: '/start'});
 
+  })
+
+  .run(function($rootScope, $location){
+    $rootScope.goTo = function(path){
+      $location.path(path);
+    };
   });
