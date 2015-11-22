@@ -6,9 +6,13 @@
 angular.module('ZeroDay.Overview')
   .directive('zdEntryFullScreenOnClick', function () {
     return {
-      link: function (scope, el) {
+      link: function (scope, el, attrs) {
 
-        var done = function(){};
+        var done = function(){
+          if(attrs.callback){
+            scope.$apply(attrs.callback);
+          }
+        };
 
         el.on('click', function(){
           var prevSibling = el.prev(),
