@@ -35,15 +35,22 @@
         background: rgb(0,255,105);
       }
 
+
       .holder{
+        //height: 100%;
+        //display: flex;
+        //flex-direction: column;
+        //white-space: nowrap;
+
         height: 100%;
         display: flex;
+        justify-content: center;
         flex-direction: column;
-        white-space: nowrap;
+
         @include single-transition(opacity,1s, ease);
 
         object{
-          width: 100%;
+          //width: 100%;
           flex-basis: 85%;
           pointer-events: none;
         }
@@ -166,12 +173,13 @@
     }
 
     &.locked{
-      position: fixed;
+      position: absolute;
+      height: initial;
 
       .entry{
-        overflow: scroll;
+        min-height: 100%;
+        height: initial;
       }
     }
   }
-
 }

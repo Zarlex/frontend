@@ -14,7 +14,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
         controller: 'OverviewController',
         controllerAs: 'overviewCtrl',
         resolve: $injector.get('OverviewControllerResolver'),
-        cssClasses: 'overview'
+        cssClasses: 'overview index slideLeft'
       })
 
       .when('/overview/virtual-warfare', {
@@ -22,7 +22,54 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
         controller: 'VirtualWarfareController',
         controllerAs: 'virtualWarfareCtrl',
         resolve: $injector.get('VirtualWarfareControllerResolver'),
-        cssClasses: 'overview virtual-warfare'
+        cssClasses: 'overview virtual-warfare slideLeft'
       });
 
   });
+
+  //.animation('.make-full-screen', [function () {
+  //  return {
+  //    // make note that other events (like addClass/removeClass)
+  //    // have different function input parameters
+  //    enter: function (element, doneFn) {
+  //      console.log('JAUUU')
+  //      debugger;
+  //      // remember to call doneFn so that angular
+  //      // knows that the animation has concluded
+  //    },
+  //
+  //    leave: function (el, doneFn) {
+  //      var docHeight = $(document).height(),
+  //        windowHeight = $(window).height(),
+  //        scrollTo = docHeight-windowHeight,
+  //        start = 0;
+  //
+  //      debugger;
+  //      setTimeout(function(){
+  //        doneFn();
+  //      },10000);
+  //      //var scrollTop = function(){
+  //      //  if(start<scrollTo){
+  //      //    $(window).scrollTo(start);
+  //      //    start = start +10;
+  //      //    console.log(start)
+  //      //    requestAnimationFrame(scrollTop)
+  //      //  } else {
+  //      //    console.log('DONE!');
+  //      //  }
+  //      //};
+  //      //
+  //      //scrollTop();
+  //      //jQuery(element).fadeOut(2000,function(){
+  //      //  console.log('LEAVE DONE');
+  //      //  doneFn();
+  //      //});
+  //
+  //      //$(window).scrollTo(scrollTo,1000, {
+  //      //  onAfter: function(){
+  //      //    console.log('DONE');
+  //      //  }
+  //      //});
+  //    }
+  //  }
+  //}]);
