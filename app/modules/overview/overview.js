@@ -5,55 +5,75 @@
 
 angular.module('ZeroDay.Overview', ['ZeroDay'])
 
-    .config(function ($routeProvider, $injector) {
+  .config(function ($routeProvider, $injector) {
 
-        $routeProvider
+    $routeProvider
 
-            .when('/overview', {
-                templateUrl: 'modules/overview/templates/overview.html',
-                controller: 'OverviewController',
-                controllerAs: 'overviewCtrl',
-                resolve: $injector.get('OverviewControllerResolver'),
-                cssClasses: 'overview index',
-                animationClasses: {
-                    to: [
-                        {
-                            route: '/overview/virtual-warfare',
-                            classes: 'virtual-warfare-enter'
-                        }
-                    ],
-                    from: [
-                        {
-                            route: '/overview/virtual-warfare',
-                            classes: 'virtual-warfare-leave'
-                        }
-                    ]
-                }
-            })
+      .when('/overview', {
+        templateUrl: 'modules/overview/templates/overview.html',
+        controller: 'OverviewController',
+        controllerAs: 'overviewCtrl',
+        resolve: $injector.get('OverviewControllerResolver'),
+        cssClasses: 'overview index',
+        animationClasses: {
+          to: [
+            {
+              route: '/overview/virtual-warfare',
+              classes: 'virtual-warfare-enter'
+            },
+            {
+              route: '/overview/real-impacts',
+              classes: 'real-impacts-enter'
+            }
+          ]
+        }
+      })
 
-            .when('/overview/virtual-warfare', {
-                templateUrl: 'modules/overview/templates/virtual_warfare/virtual_warfare.html',
-                controller: 'VirtualWarfareController',
-                controllerAs: 'virtualWarfareCtrl',
-                resolve: $injector.get('VirtualWarfareControllerResolver'),
-                cssClasses: 'overview virtual-warfare',
-                animationClasses: {
-                    to: [
-                        {
-                            route: '/overview',
-                            classes: 'index-enter'
-                        }
-                    ],
-                    from: [
-                        {
-                            route: '/overview',
-                            classes: 'index-leave'
-                        }
-                    ]
-                }
-            });
+      .when('/overview/virtual-warfare', {
+        templateUrl: 'modules/overview/templates/virtual_warfare/virtual_warfare.html',
+        controller: 'VirtualWarfareController',
+        controllerAs: 'virtualWarfareCtrl',
+        resolve: $injector.get('VirtualWarfareControllerResolver'),
+        cssClasses: 'overview virtual-warfare',
+        animationClasses: {
+          to: [
+            {
+              route: '/overview',
+              classes: 'index-enter'
+            },
+            {
+              route: '/real-impacts',
+              classes: 'real-impacts-enter'
+            }
+          ]
+        }
+      })
 
-    });
+      .when('/overview/real-impacts', {
+        templateUrl: 'modules/overview/templates/real_impacts/real_impacts.html',
+        controller: 'RealImpactsController',
+        controllerAs: 'realImpactsCtrl',
+        resolve: $injector.get('RealImpactsControllerResolver'),
+        cssClasses: 'overview real-impacts',
+        animationClasses: {
+          to: [
+            {
+              route: '/overview',
+              classes: 'index-enter'
+            },
+            {
+              route: '/virtual-warfare',
+              classes: 'virtual-impacts-enter'
+            },
+            {
+              route: '/current-attacks',
+              classes: 'current-attacks-enter'
+            }
+          ]
+        }
+      });
+
+  });
 
 //.animation('.make-full-screen', [function () {
 //  return {

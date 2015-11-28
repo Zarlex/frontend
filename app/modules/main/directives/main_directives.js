@@ -3,9 +3,9 @@
  */
 'use strict';
 
-var getRelativeScrollPos = function () {
+var getRelativeScrollPos = function (axis) {
   var screenHeight = angular.element(window).height(),
-    scrollPos = window.scrollY;
+    scrollPos = window['scroll'+axis.toUpperCase()];
   return scrollPos / screenHeight * 100;
 };
 
@@ -13,12 +13,11 @@ angular.module('ZeroDay')
   .directive('zdAppendClassAccordingToRoute', function ($route, $location) {
     return {
       link: function (scope, el) {
-        var orgClasses = el.attr('class'),
-          _current;
+        var orgClasses = el.attr('class');
+
         scope.$on('$routeChangeSuccess', function (event, current) {
           el.attr('class', orgClasses);
           el.addClass(current.cssClasses);
-          _current = current;
         });
 
 
@@ -44,8 +43,6 @@ angular.module('ZeroDay')
             }
           }
         });
-
-
       }
     };
   })
@@ -61,11 +58,35 @@ angular.module('ZeroDay')
         };
 
         var throttled = _.throttle(function () {
-          var relativeScrollPos = getRelativeScrollPos(),
+          var relativeScrollPos = getRelativeScrollPos('Y'),
             parallaxOffset = scope.parallaxOffset || 1,
             backgroundPosY = relativeScrollPos * parallaxOffset * -1;
 
           setBackgroundPosition(backgroundPosY + '%');
+        }, 10);
+
+        angular.element(window).on('scroll', throttled);
+      }
+    };
+  })
+
+  .directive('zdSetPropertyToScrollPos', function () {
+    return {
+      link: function (scope, el, attrs) {
+        var property = attrs.property,
+            unit = attrs.unit || 'px',
+            axis = (attrs.axis || 'y').toUpperCase(),
+            parallaxOffset = parseInt( (attrs.parallaxOffset || 1), 10 );
+
+        var setProperty = function (property,val) {
+          el.css(property, val);
+        };
+
+        var throttled = _.throttle(function () {
+          var relativeScrollPos = window['scroll'+axis],
+            offsetPos = relativeScrollPos * parallaxOffset;
+
+          setProperty(property,offsetPos + unit);
         }, 10);
 
         angular.element(window).on('scroll', throttled);
@@ -130,7 +151,7 @@ angular.module('ZeroDay')
         };
 
         var throttled = _.throttle(function () {
-          var relativeScrollPos = getRelativeScrollPos(el),
+          var relativeScrollPos = getRelativeScrollPos('y'),
             opacityVal = relativeScrollPos > maxOpacity ? maxOpacity : relativeScrollPos;
 
           setBackgroundColor(Math.floor(opacityVal / 10) / 10);
@@ -158,6 +179,25 @@ angular.module('ZeroDay')
         var throtteledFn = _.throttle(setWidth, 1000);
 
         setWidth();
+        angular.element(window).resize(throtteledFn);
+      }
+    };
+  })
+
+  .directive('zdCalculateStaticHeight', function () {
+    return {
+      link: function (scope, el, attrs) {
+        var setHeight = function () {
+          var windowHeight = angular.element(window).height(),
+            factor = parseInt(attrs.zdCalculateStaticHeight, 10),
+            height = windowHeight * (factor / 100);
+
+          el.css('height', height);
+        };
+
+        var throtteledFn = _.throttle(setHeight, 1000);
+
+        setHeight();
         angular.element(window).resize(throtteledFn);
       }
     };

@@ -1,55 +1,38 @@
 <div class="navigator full-screen-view center-items">
 
-  <div class="entries-holder">
+    <div class="entries-holder">
 
-    <div class="entry warfare" ng-click="goTo('/overview/virtual-warfare')">
-      <div class="holder" zd-calculate-static-width="50%">
-        <object data="modules/overview/assets/warfare_logo.svg" type="image/svg+xml">
-          <img src="modules/overview/assets/warfare_logo_fallback.png"/>
-        </object>
-        <div class="title">
-          <h2>Virtual Warfare</h2>
+        <div zd-overview-item
+             id="warfare"
+             url="/overview/virtual-warfare"
+             logo-url="modules/overview/assets/warfare_logo.svg"
+             logo-fallback-url="modules/overview/assets/warfare_logo_fallback.png"
+             title="Virtual Warfare"
+             copy="Das Virtuelle Schlachtfeld"></div>
 
-          <p class="copy">Das Virtuelle Schlachtfeld</p>
-        </div>
-      </div>
+        <div zd-overview-item
+             id="impacts"
+             url="/overview/real-impacts"
+             logo-url="modules/overview/assets/impacts_logo.svg"
+             logo-fallback-url="modules/overview/assets/impacts_logo_fallback.png"
+             title="Real Impacts"
+             copy="Auswirkungen auf die reale Weltd"></div>
+
+        <div zd-overview-item
+             id="attacks"
+             url="/overview/current-attacks"
+             logo-url="modules/overview/assets/attacks_logo.svg"
+             logo-fallback-url="modules/overview/assets/attacks_logo_fallback.png"
+             title="Current Attacks"
+             copy="Die Geschichte der Cyberattacken"></div>
+
+        <div zd-overview-item
+             id="threads"
+             url="/overview/virtual-warfare"
+             logo-url="modules/overview/assets/threads_logo.svg"
+             logo-fallback-url="modules/overview/assets/threads_logo_fallback.png"
+             title="Potential Threads"
+             copy="Veränderung der Weltweiten Machtkonstellation"></div>
+
     </div>
-    <div class="entry impacts" zd-entry-full-screen-on-click>
-      <div class="holder" zd-calculate-static-width="50%">
-        <object data="modules/overview/assets/impacts_logo.svg" type="image/svg+xml">
-          <img src="modules/overview/assets/impacts_logo_fallback.png"/>
-        </object>
-        <div class="title">
-          <h2>Real Impacts</h2>
-
-          <p class="copy">Auswirkungen auf die reale Welt</p>
-        </div>
-      </div>
-    </div>
-    <div class="entry attacks" zd-entry-full-screen-on-click>
-      <div class="holder" zd-calculate-static-width="50%">
-        <object data="modules/overview/assets/attacks_logo.svg" type="image/svg+xml">
-          <img src="modules/overview/assets/attacks_logo_fallback.png"/>
-        </object>
-        <div class="title">
-          <h2>Current Attacks</h2>
-
-          <p class="copy">Die Geschichte der Cyberattacken</p>
-        </div>
-      </div>
-    </div>
-    <div class="entry threads" zd-entry-full-screen-on-click>
-      <div class="holder" zd-calculate-static-width="50%">
-        <object data="modules/overview/assets/threads_logo.svg" type="image/svg+xml">
-          <img src="modules/overview/assets/threads_logo_fallback.png"/>
-        </object>
-        <div class="title">
-          <h2>Potential Threads</h2>
-
-          <p class="copy">Veränderung der Weltweiten Machtkonstellation</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
 </div>
