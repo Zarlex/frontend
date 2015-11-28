@@ -10,7 +10,7 @@ var getRelativeScrollPos = function (axis) {
 };
 
 angular.module('ZeroDay')
-  .directive('zdAppendClassAccordingToRoute', function ($route, $location) {
+  .directive('zdAppendClassAccordingToRoute', function ($route) {
     return {
       link: function (scope, el) {
         var orgClasses = el.attr('class');
@@ -21,11 +21,11 @@ angular.module('ZeroDay')
         });
 
 
-        scope.$on('$locationChangeStart', function (event, nextPage, currentPage) {
+        scope.$on('$locationChangeStart', function (event, nextPage) {
           if ($route.current.animationClasses && _.isArray($route.current.animationClasses.to)) {
             $route.current.animationClasses.to.forEach(function (animation) {
               if (animation.route && nextPage.match(animation.route)) {
-                el.addClass(animation.classes)
+                el.addClass(animation.classes);
               }
             });
           }
@@ -37,7 +37,7 @@ angular.module('ZeroDay')
             if ($route.current.animationClasses && _.isArray($route.current.animationClasses.from)) {
               $route.current.animationClasses.from.forEach(function (animation) {
                 if (animation.route && prevPage.match(animation.route)) {
-                  el.addClass(animation.classes)
+                  el.addClass(animation.classes);
                 }
               });
             }
