@@ -4,13 +4,13 @@
 'use strict';
 
 angular.module('ZeroDay.Overview')
-  .controller('OverviewController', function(test) {})
+  .controller('RealImpactsController', function() {})
 
-  .constant('OverviewControllerResolver', {
+  .constant('RealImpactsControllerResolver', {
     test: function($q){
       var dfd = $q.defer();
       setTimeout(function(){
-        console.log('DONE')
+        console.log('DONE WAR')
         dfd.resolve();
       },500);
       return dfd.promise;

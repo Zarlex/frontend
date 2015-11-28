@@ -1,12 +1,12 @@
-&.overview{
+&.overview {
 
-  .entries-holder{
+  .entries-holder {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
 
-    .entry{
+    .entry {
 
       height: 100%;
       transition: width 1s ease;
@@ -19,82 +19,88 @@
 
       @include single-transition(flex-basis, 1s, ease);
 
-      &.warfare{
-        background: rgb(192,255,217);
+      &.warfare {
+        background: rgb(192, 255, 217);
       }
 
-      &.impacts{
-        background: rgb(128,255,179);
+      &.impacts {
+        background: rgb(128, 255, 179);
       }
 
-      &.attacks{
-        background: rgb(64,255,141);
+      &.attacks {
+        background: rgb(64, 255, 141);
       }
 
-      &.threads{
-        background: rgb(0,255,105);
+      &.threads {
+        background: rgb(0, 255, 105);
       }
 
-      .holder{
+      .holder {
+        //height: 100%;
+        //display: flex;
+        //flex-direction: column;
+        //white-space: nowrap;
+
         height: 100%;
         display: flex;
+        justify-content: center;
         flex-direction: column;
-        white-space: nowrap;
-        @include single-transition(opacity,1s, ease);
 
-        object{
-          width: 100%;
+        @include single-transition(opacity, 1s, ease);
+
+        object {
+          //width: 100%;
           flex-basis: 85%;
           pointer-events: none;
         }
 
-        .title{
+        .title {
           position: relative;
           padding: 16px;
           flex-basis: 15%;
           transform: translateY(18px);
-          @include single-transition(transform,1s, ease);
+          @include single-transition(transform, 1s, ease);
 
-          h2,p{
+          h2, p {
             margin: 0;
           }
 
-          p{
+          p {
             opacity: 0;
-            @include single-transition(opacity,1s, ease);
+            @include single-transition(opacity, 1s, ease);
           }
         }
       }
 
-      .content-holder{
+      .content-holder {
         white-space: normal;
 
-        article{
+        article {
           margin: 0 8% 50px 8%;
           font-size: 22px;
 
-          h3{
+          h3 {
             text-transform: uppercase;
             font-size: 35px;
           }
 
-          > p{
+          > p {
             padding: 2%;
           }
 
-          cite{
+          cite {
             color: $zdPrimary;
 
-            &:before{
+            &:before {
               content: "»"
             }
 
-            &:after{
+            &:after {
               content: "«"
             }
 
-            ~ .author{
-              &:before{
+            ~ .author {
+              &:before {
                 content: "—"
               }
             }
@@ -102,45 +108,44 @@
         }
       }
 
-      .button-holder{
-        .btn-nav{
+      .button-holder {
+        .btn-nav {
           width: 50%;
         }
 
-        .btn-impact{
-          background: rgb(128,255,179);
+        .btn-impact {
+          background: rgb(128, 255, 179);
           color: white;
         }
       }
 
-      &:hover{
+      &:hover {
         flex-basis: 75%;
       }
 
       &:hover,
-      &.active{
-        .holder{
-
-          .title{
+      &.active {
+        .holder {
+          .title {
             transform: translateY(0);
-            p{
+            p {
               opacity: 1;
             }
           }
         }
       }
 
-      &.active{
-        &.entries-prev-next{
+      &.active {
+        &.entries-prev-next {
           flex-basis: 96%;
         }
 
         &.entry-prev,
-        &.entry-next{
+        &.entry-next {
           flex-basis: 98%;
         }
 
-        .holder{
+        .holder {
           width: 100% !important;
 
           .title {
@@ -150,28 +155,157 @@
       }
 
       &.no-flex,
-      &.min-flex{
-        .holder{
+      &.min-flex {
+        .holder {
           opacity: 0;
         }
       }
 
-      &.no-flex{
+      &.no-flex {
         flex-basis: 0;
       }
 
-      &.min-flex{
+      &.min-flex {
         flex-basis: 2%;
       }
     }
 
-    &.locked{
-      position: fixed;
+    //&.locked{
+    position: absolute;
+    height: initial;
+    min-height: 100%;
 
-      .entry{
-        overflow: scroll;
+    .entry {
+      min-height: 100%;
+      height: initial;
+    }
+    //}
+
+    .hidden-entry-holder {
+      flex-basis: 2%;
+      display: flex;
+
+      .entry.impacts {
+        flex-basis: 100%;
+      }
+
+      .entry .holder {
+        display: none;
       }
     }
   }
+}
+
+&.view {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+&.view.ng-enter, &.view.ng-leave, &.view.ng-enter, &.view.ng-leave {
+  @include single-transition(all, 1s, ease);
+}
+
+//View changes from overview to virtual warfare
+//Overview page animate out
+&.overview.index.virtual-warfare-enter.ng-leave {
 
 }
+
+&.overview.index.virtual-warfare-enter.ng-leave-active {
+  z-index: 1;
+
+  .entry {
+    flex-basis: 0;
+  }
+
+  .entry.warfare {
+    flex-basis: 100%;
+
+    .holder {
+      width: 100% !important;
+    }
+
+    .title {
+      transform: translateX(5%);
+    }
+  }
+
+  .entry.impacts {
+    flex-basis: 2%;
+  }
+}
+
+&.overview.virtual-warfare.index-enter.ng-leave {
+  z-index: 2;
+
+  .entry {
+    flex-basis: 0%;
+  }
+
+  .entry.warfare {
+    flex-basis: 100%;
+
+    .holder {
+      @include single-transition(width,1s,ease);
+      width: 100% !important;
+    }
+  }
+
+  .entry.warfare {
+    flex-basis: 2%;
+  }
+}
+
+&.overview.virtual-warfare.index-enter.ng-leave-active {
+  z-index: 2;
+
+  .entry {
+    flex-basis: 25%;
+  }
+
+  .entry.warfare {
+    flex-basis: 25%;
+
+    .holder {
+      width: 200% !important;
+    }
+  }
+
+  .entry.impacts {
+    flex-basis: 25%;
+  }
+}
+
+
+
+&.overview.index.real-impacts-enter.ng-leave {
+
+}
+
+&.overview.index.real-impacts-enter.ng-leave-active {
+  z-index: 1;
+
+  .entry {
+    flex-basis: 0;
+  }
+
+  .entry.impacts {
+    flex-basis: 100%;
+
+    .holder {
+      width: 100% !important;
+    }
+
+    .title {
+      transform: translateX(5%);
+    }
+  }
+
+  .entry.attacks,
+  .entry.warfare{
+    flex-basis: 2%;
+  }
+}
+

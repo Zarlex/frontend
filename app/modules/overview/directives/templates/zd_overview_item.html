@@ -1,0 +1,14 @@
+<div class="entry {{id}}" ng-click="open()">
+    <div class="holder" zd-calculate-static-width="50%" zd-calculate-static-height="100%">
+        <object data="{{logoUrl}}" type="image/svg+xml">
+            <img ng-if="logoFallbackUrl"
+                 ng-src="{{logoFallbackUrl}}"/>
+        </object>
+        <div class="title">
+            <h2>{{title}}</h2>
+
+            <p class="copy">{{copy}}</p>
+        </div>
+    </div>
+    <div ng-transclude></div>
+</div>

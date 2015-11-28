@@ -2,8 +2,7 @@
 
     <div class="entries-holder locked">
 
-        <div class="entry warfare active entry-next"
-             zd-fade-to-color-on-scroll color="#fff">
+        <div class="entry warfare min-flex">
             <div class="holder"
                  zd-calculate-static-width="50%"
                  zd-calculate-static-height="100%">
@@ -16,6 +15,18 @@
                     <p class="copy">Das Virtuelle Schlachtfeld</p>
                 </div>
             </div>
+        </div>
+
+
+        <div class="active entry-next"
+             zd-fade-to-color-on-scroll color="#fff"
+             zd-overview-item
+             id="impacts"
+             url="/overview/real-impacts"
+             logo-url="modules/overview/assets/impacts_logo.svg"
+             logo-fallback-url="modules/overview/assets/impacts_logo_fallback.png"
+             title="Real Impacts"
+             copy="Auswirkungen auf die reale Welt">
 
             <div class="content-holder"
                  zd-calculate-static-width="100%"
@@ -23,27 +34,13 @@
 
             <div class="button-holder">
 
-                <button class="btn btn-nav" ng-click="goTo('/overview')">Previous</button>
+                <button class="btn btn-nav">Previous</button>
                 <button class="btn btn-nav btn-impact">Next</button>
 
             </div>
-
         </div>
 
-
-        <div zd-set-property-to-scroll-pos
-             property="margin-top"
-
-             class="min-flex"
-             zd-overview-item
-             id="impacts"
-             url="/overview/real-impacts"
-             logo-url="modules/overview/assets/impacts_logo.svg"
-             logo-fallback-url="modules/overview/assets/impacts_logo_fallback.png"
-             title="Real Impacts"
-             copy="Auswirkungen auf die reale Welt"></div>
-
-        <div class="no-flex"
+        <div class="min-flex"
              zd-overview-item
              id="attacks"
              url="/overview/current-attacks"

@@ -3,20 +3,45 @@
  */
 'use strict';
 
-var getRelativeScrollPos = function () {
+var getRelativeScrollPos = function (axis) {
   var screenHeight = angular.element(window).height(),
-    scrollPos = window.scrollY;
+    scrollPos = window['scroll'+axis.toUpperCase()];
   return scrollPos / screenHeight * 100;
 };
 
 angular.module('ZeroDay')
-  .directive('zdAppendClassAccordingToRoute', function () {
+  .directive('zdAppendClassAccordingToRoute', function ($route) {
     return {
-      link: function (scope, elm) {
-        var orgClasses = elm.attr('class');
+      link: function (scope, el) {
+        var orgClasses = el.attr('class');
+
         scope.$on('$routeChangeSuccess', function (event, current) {
-          elm.attr('class', orgClasses);
-          elm.addClass(current.cssClasses);
+          el.attr('class', orgClasses);
+          el.addClass(current.cssClasses);
+        });
+
+
+        scope.$on('$locationChangeStart', function (event, nextPage) {
+          if ($route.current.animationClasses && _.isArray($route.current.animationClasses.to)) {
+            $route.current.animationClasses.to.forEach(function (animation) {
+              if (animation.route && nextPage.match(animation.route)) {
+                el.addClass(animation.classes);
+              }
+            });
+          }
+        });
+
+        scope.$on('$routeChangeSuccess', function (event, params, previousPage) {
+          if (previousPage) {
+            var prevPage = previousPage.originalPath;
+            if ($route.current.animationClasses && _.isArray($route.current.animationClasses.from)) {
+              $route.current.animationClasses.from.forEach(function (animation) {
+                if (animation.route && prevPage.match(animation.route)) {
+                  el.addClass(animation.classes);
+                }
+              });
+            }
+          }
         });
       }
     };
@@ -33,7 +58,7 @@ angular.module('ZeroDay')
         };
 
         var throttled = _.throttle(function () {
-          var relativeScrollPos = getRelativeScrollPos(),
+          var relativeScrollPos = getRelativeScrollPos('Y'),
             parallaxOffset = scope.parallaxOffset || 1,
             backgroundPosY = relativeScrollPos * parallaxOffset * -1;
 
@@ -45,25 +70,49 @@ angular.module('ZeroDay')
     };
   })
 
+  .directive('zdSetPropertyToScrollPos', function () {
+    return {
+      link: function (scope, el, attrs) {
+        var property = attrs.property,
+            unit = attrs.unit || 'px',
+            axis = (attrs.axis || 'y').toUpperCase(),
+            parallaxOffset = parseInt( (attrs.parallaxOffset || 1), 10 );
+
+        var setProperty = function (property,val) {
+          el.css(property, val);
+        };
+
+        var throttled = _.throttle(function () {
+          var relativeScrollPos = window['scroll'+axis],
+            offsetPos = relativeScrollPos * parallaxOffset;
+
+          setProperty(property,offsetPos + unit);
+        }, 10);
+
+        angular.element(window).on('scroll', throttled);
+      }
+    };
+  })
+
   .directive('zdFadeToColorOnScroll', function () {
     return {
 
       link: function (scope, el, attrs) {
-        var maxOpacity = attrs.maxOpacity ? parseInt(attrs.maxOpacity,10) : 100,
-            color = attrs.color || '#fff',
-            _rgbaColor = {},
-            _orgBackgroundImg = '';
+        var maxOpacity = attrs.maxOpacity ? parseInt(attrs.maxOpacity, 10) : 100,
+          color = attrs.color || '#fff',
+          _rgbaColor = {},
+          _orgBackgroundImg = '';
 
-        var rgbaToString = function(r,g,b,a){
-          return 'rgba('+r+','+g+','+b+','+a+')';
+        var rgbaToString = function (r, g, b, a) {
+          return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
         };
 
-        var rgbaToGradient = function(rgbaStr){
-          return 'linear-gradient('+rgbaStr+' 0%, '+rgbaStr+' 100%)';
+        var rgbaToGradient = function (rgbaStr) {
+          return 'linear-gradient(' + rgbaStr + ' 0%, ' + rgbaStr + ' 100%)';
         };
 
-        var getOrgBackgroundImage = function(el){
-          if(el.css('background-image') !== 'none'){
+        var getOrgBackgroundImage = function (el) {
+          if (el.css('background-image') !== 'none') {
             return el.css('background-image');
           } else {
             var bgColor = el.css('background-color');
@@ -71,9 +120,9 @@ angular.module('ZeroDay')
           }
         };
 
-        var getRgbFromHex = function(hex){
+        var getRgbFromHex = function (hex) {
           var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-          hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+          hex = hex.replace(shorthandRegex, function (m, r, g, b) {
             return r + r + g + g + b + b;
           });
 
@@ -85,31 +134,31 @@ angular.module('ZeroDay')
           } : null;
         };
 
-        var attachOverlayToEl = function(el, orgImg, overlayGradient){
+        var attachOverlayToEl = function (el, orgImg, overlayGradient) {
           var newBgImg = overlayGradient + ',' + orgImg;
           el.css('background-image', newBgImg);
         };
 
-        var setBackgroundColor = function(opacity){
-          if(!_orgBackgroundImg){
+        var setBackgroundColor = function (opacity) {
+          if (!_orgBackgroundImg) {
             _orgBackgroundImg = getOrgBackgroundImage(el);
           }
 
-          var overlayRgbaStr = rgbaToString(_rgbaColor.r,_rgbaColor.g,_rgbaColor.b,opacity),
-              overlayGradient = rgbaToGradient(overlayRgbaStr);
+          var overlayRgbaStr = rgbaToString(_rgbaColor.r, _rgbaColor.g, _rgbaColor.b, opacity),
+            overlayGradient = rgbaToGradient(overlayRgbaStr);
 
           attachOverlayToEl(el, _orgBackgroundImg, overlayGradient);
         };
 
         var throttled = _.throttle(function () {
-          var relativeScrollPos = getRelativeScrollPos(el),
-              opacityVal = relativeScrollPos > maxOpacity ? maxOpacity : relativeScrollPos;
+          var relativeScrollPos = getRelativeScrollPos('y'),
+            opacityVal = relativeScrollPos > maxOpacity ? maxOpacity : relativeScrollPos;
 
-          setBackgroundColor(Math.floor(opacityVal/10 ) / 10 );
+          setBackgroundColor(Math.floor(opacityVal / 10) / 10);
 
         });
 
-        _rgbaColor =getRgbFromHex(color);
+        _rgbaColor = getRgbFromHex(color);
         angular.element(window).on('scroll', throttled);
         el.on('scroll', throttled);
       }
@@ -119,17 +168,36 @@ angular.module('ZeroDay')
   .directive('zdCalculateStaticWidth', function () {
     return {
       link: function (scope, el, attrs) {
-        var setWidth = function(){
+        var setWidth = function () {
           var windowWidth = angular.element(window).width(),
-            factor = parseInt(attrs.zdCalculateStaticWidth,10),
+            factor = parseInt(attrs.zdCalculateStaticWidth, 10),
             width = windowWidth * (factor / 100);
 
-          el.css('width',width);
+          el.css('width', width);
         };
 
-        var throtteledFn = _.throttle(setWidth,1000);
+        var throtteledFn = _.throttle(setWidth, 1000);
 
         setWidth();
+        angular.element(window).resize(throtteledFn);
+      }
+    };
+  })
+
+  .directive('zdCalculateStaticHeight', function () {
+    return {
+      link: function (scope, el, attrs) {
+        var setHeight = function () {
+          var windowHeight = angular.element(window).height(),
+            factor = parseInt(attrs.zdCalculateStaticHeight, 10),
+            height = windowHeight * (factor / 100);
+
+          el.css('height', height);
+        };
+
+        var throtteledFn = _.throttle(setHeight, 1000);
+
+        setHeight();
         angular.element(window).resize(throtteledFn);
       }
     };
