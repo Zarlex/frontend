@@ -1,0 +1,66 @@
+/* Overview -> Virtual Warfare */
+&.overview.ng-enter, &.view.ng-leave, &.view.ng-enter, &.view.ng-leave {
+  @include single-transition(all, 1s, ease);
+}
+
+&.overview.index.virtual-warfare-enter.ng-leave {
+
+  .holder{
+    @include single-transition(width, 1s, ease);
+  }
+}
+
+&.overview.index.virtual-warfare-enter.ng-leave-active {
+  z-index: 1;
+
+  .entry {
+    flex-basis: 0;
+  }
+
+  .entry.warfare {
+    flex-basis: 100%;
+
+    //.holder {
+    //  width: 100% !important;
+    //}
+
+    .title {
+      transform: translateX(5%);
+    }
+  }
+
+  .entry.impacts {
+    flex-basis: 2%;
+  }
+}
+
+&.overview.index.real-impacts-enter.ng-leave {
+
+}
+
+
+/* Overview -> Real Impacts */
+&.overview.index.real-impacts-enter.ng-leave-active {
+  z-index: 1;
+
+  .entry {
+    flex-basis: 0;
+  }
+
+  .entry.impacts {
+    flex-basis: 100%;
+
+    .holder {
+      width: 100% !important;
+    }
+
+    .title {
+      transform: translateX(5%);
+    }
+  }
+
+  .entry.attacks,
+  .entry.warfare{
+    flex-basis: 2%;
+  }
+}
