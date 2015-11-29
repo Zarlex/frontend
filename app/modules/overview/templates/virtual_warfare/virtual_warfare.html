@@ -2,20 +2,17 @@
 
     <div class="entries-holder locked">
 
-        <div class="entry warfare active entry-next"
-             zd-fade-to-color-on-scroll color="#fff">
-            <div class="holder"
-                 zd-calculate-static-width="50%"
-                 zd-calculate-static-height="100%">
-                <object data="modules/overview/assets/warfare_logo.svg" type="image/svg+xml">
-                    <img src="modules/overview/assets/warfare_logo_fallback.png"/>
-                </object>
-                <div class="title">
-                    <h2>Virtual Warfare</h2>
+        <div zd-fade-to-color-on-scroll color="#fff"
 
-                    <p class="copy">Das Virtuelle Schlachtfeld</p>
-                </div>
-            </div>
+             class="active entry-next"
+             zd-overview-item
+             id="warfare"
+             url="/overview/real-impacts"
+             logo-url="modules/overview/assets/warfare_logo.svg"
+             logo-fallback-url="modules/overview/assets/warfare_logo_fallback.png"
+             title="Virtual Warfare"
+             copy="Das Virtuelle Schlachtfeld"
+             holder-width="100%">
 
             <div class="content-holder"
                  zd-calculate-static-width="100%"

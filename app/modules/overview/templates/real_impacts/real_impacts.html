@@ -2,19 +2,18 @@
 
     <div class="entries-holder locked">
 
-        <div class="entry warfare min-flex">
-            <div class="holder"
-                 zd-calculate-static-width="50%"
-                 zd-calculate-static-height="100%">
-                <object data="modules/overview/assets/warfare_logo.svg" type="image/svg+xml">
-                    <img src="modules/overview/assets/warfare_logo_fallback.png"/>
-                </object>
-                <div class="title">
-                    <h2>Virtual Warfare</h2>
+        <div zd-set-property-to-scroll-pos
+             property="margin-top"
 
-                    <p class="copy">Das Virtuelle Schlachtfeld</p>
-                </div>
-            </div>
+             class="min-flex"
+             zd-overview-item
+             id="warfare"
+             url="/overview/real-impacts"
+             logo-url="modules/overview/assets/warfare_logo.svg"
+             logo-fallback-url="modules/overview/assets/warfare_logo_fallback.png"
+             title="Virtual Warfare"
+             copy="Das Virtuelle Schlachtfeld"
+             holder-width="100%">
         </div>
 
 
@@ -40,7 +39,10 @@
             </div>
         </div>
 
-        <div class="min-flex"
+        <div zd-set-property-to-scroll-pos
+             property="margin-top"
+
+             class="min-flex"
              zd-overview-item
              id="attacks"
              url="/overview/current-attacks"
