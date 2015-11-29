@@ -5,15 +5,16 @@
 
 var getRelativeScrollPos = function (axis) {
   var screenHeight = angular.element(window).height(),
-    scrollPos = window['scroll'+axis.toUpperCase()];
+    scrollPos = window['scroll' + axis.toUpperCase()];
   return scrollPos / screenHeight * 100;
 };
 
 angular.module('ZeroDay')
-  .directive('zdAppendClassAccordingToRoute', function ($route) {
+  .directive('zdAppendClassAccordingToRoute', function ($rootScope, $route, $animate) {
     return {
       link: function (scope, el) {
-        var orgClasses = el.attr('class');
+        var orgClasses = el.attr('class'),
+            _postProcessFns = [];
 
         scope.$on('$routeChangeSuccess', function (event, current) {
           el.attr('class', orgClasses);
@@ -26,6 +27,12 @@ angular.module('ZeroDay')
             $route.current.animationClasses.to.forEach(function (animation) {
               if (animation.route && nextPage.match(animation.route)) {
                 el.addClass(animation.classes);
+
+                if (animation.process && typeof animation.process === 'function') {
+                  $rootScope.$on('$routeChangeSuccess', function(){
+                    animation.process.call(this, el, event, nextPage);
+                  });
+                }
               }
             });
           }
@@ -54,7 +61,7 @@ angular.module('ZeroDay')
       },
       link: function (scope, el) {
         var setBackgroundPosition = function (posY) {
-          el.css('background-position', '0 ' + posY + ', 0 0');
+          el.css('background-position', '0 0, 0 ' + posY );
         };
 
         var throttled = _.throttle(function () {
@@ -74,19 +81,19 @@ angular.module('ZeroDay')
     return {
       link: function (scope, el, attrs) {
         var property = attrs.property,
-            unit = attrs.unit || 'px',
-            axis = (attrs.axis || 'y').toUpperCase(),
-            parallaxOffset = parseInt( (attrs.parallaxOffset || 1), 10 );
+          unit = attrs.unit || 'px',
+          axis = (attrs.axis || 'y').toUpperCase(),
+          parallaxOffset = parseInt((attrs.parallaxOffset || 1), 10);
 
-        var setProperty = function (property,val) {
+        var setProperty = function (property, val) {
           el.css(property, val);
         };
 
         var throttled = _.throttle(function () {
-          var relativeScrollPos = window['scroll'+axis],
+          var relativeScrollPos = window['scroll' + axis],
             offsetPos = relativeScrollPos * parallaxOffset;
 
-          setProperty(property,offsetPos + unit);
+          setProperty(property, offsetPos + unit);
         }, 10);
 
         angular.element(window).on('scroll', throttled);
