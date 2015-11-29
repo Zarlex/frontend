@@ -19,7 +19,13 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
           to: [
             {
               route: '/overview/virtual-warfare',
-              classes: 'virtual-warfare-enter'
+              classes: 'virtual-warfare-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.warfare .holder');
+                holderEl.animate({
+                  width: '100%'
+                },1000);
+              }
             },
             {
               route: '/overview/real-impacts',
@@ -43,7 +49,13 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
             },
             {
               route: '/real-impacts',
-              classes: 'real-impacts-enter'
+              classes: 'real-impacts-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.warfare .holder');
+                holderEl.animate({
+                  width: holderEl.width+'px'
+                },1000);
+              }
             }
           ]
         }
@@ -63,7 +75,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
             },
             {
               route: '/virtual-warfare',
-              classes: 'virtual-impacts-enter'
+              classes: 'virtual-warfare-enter'
             },
             {
               route: '/current-attacks',
@@ -74,50 +86,3 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
       });
 
   });
-
-//.animation('.make-full-screen', [function () {
-//  return {
-//    // make note that other events (like addClass/removeClass)
-//    // have different function input parameters
-//    enter: function (element, doneFn) {
-//      console.log('JAUUU')
-//      debugger;
-//      // remember to call doneFn so that angular
-//      // knows that the animation has concluded
-//    },
-//
-//    leave: function (el, doneFn) {
-//      var docHeight = $(document).height(),
-//        windowHeight = $(window).height(),
-//        scrollTo = docHeight-windowHeight,
-//        start = 0;
-//
-//      debugger;
-//      setTimeout(function(){
-//        doneFn();
-//      },10000);
-//      //var scrollTop = function(){
-//      //  if(start<scrollTo){
-//      //    $(window).scrollTo(start);
-//      //    start = start +10;
-//      //    console.log(start)
-//      //    requestAnimationFrame(scrollTop)
-//      //  } else {
-//      //    console.log('DONE!');
-//      //  }
-//      //};
-//      //
-//      //scrollTop();
-//      //jQuery(element).fadeOut(2000,function(){
-//      //  console.log('LEAVE DONE');
-//      //  doneFn();
-//      //});
-//
-//      //$(window).scrollTo(scrollTo,1000, {
-//      //  onAfter: function(){
-//      //    console.log('DONE');
-//      //  }
-//      //});
-//    }
-//  }
-//}]);
