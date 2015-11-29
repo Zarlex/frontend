@@ -64,8 +64,8 @@ angular.module('ZeroDay.Overview')
       templateUrl: 'modules/overview/directives/templates/zd_overview_item.html',
       link: function(scope){
         scope.open = function(){
-          $location.path(scope.url)
-        }
+          $location.path(scope.url);
+        };
       }
-    }
+    };
   });

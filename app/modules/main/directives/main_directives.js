@@ -10,11 +10,10 @@ var getRelativeScrollPos = function (axis) {
 };
 
 angular.module('ZeroDay')
-  .directive('zdAppendClassAccordingToRoute', function ($rootScope, $route, $animate) {
+  .directive('zdAppendClassAccordingToRoute', function ($rootScope, $route) {
     return {
       link: function (scope, el) {
-        var orgClasses = el.attr('class'),
-            _postProcessFns = [];
+        var orgClasses = el.attr('class');
 
         scope.$on('$routeChangeSuccess', function (event, current) {
           el.attr('class', orgClasses);
