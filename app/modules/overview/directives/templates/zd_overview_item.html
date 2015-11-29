@@ -1,5 +1,5 @@
 <div class="entry {{id}}" ng-click="open()">
-    <div class="holder" zd-calculate-static-width="50%" zd-calculate-static-height="100%">
+    <div class="holder" zd-calculate-static-width="{{holderWidth}}" zd-calculate-static-height="100%">
         <object data="{{logoUrl}}" type="image/svg+xml">
             <img ng-if="logoFallbackUrl"
                  ng-src="{{logoFallbackUrl}}"/>

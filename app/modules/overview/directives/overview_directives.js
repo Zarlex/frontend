@@ -56,7 +56,8 @@ angular.module('ZeroDay.Overview')
         logoUrl: '@',
         logoFallbackUrl: '@',
         title: '@',
-        copy: '@'
+        copy: '@',
+        holderWidth: '@'
       },
       transclude: true,
       replace: true,
