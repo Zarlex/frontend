@@ -1,0 +1,67 @@
+/* Real Impacts -> Overview */
+&.overview.real-impacts.index-enter.ng-leave { }
+
+&.overview.real-impacts.index-enter.ng-leave-active {
+  z-index: 2;
+
+  .entry {
+    flex-basis: 25%;
+  }
+
+  .entry.impacts {
+    flex-basis: 25%;
+  }
+}
+
+/* Real Impacts -> Virtual-Warfare */
+&.overview.real-impacts.virtual-warfare-enter.ng-leave { }
+
+&.overview.real-impacts.virtual-warfare-enter.ng-leave-active {
+  z-index: 2;
+
+  .entry {
+    flex-basis: 0%;
+  }
+
+  .entry.warfare {
+    flex-basis: 98%;
+
+    .holder {
+      opacity: 1;
+      .title {
+        transform: translateX(5%);
+      }
+    }
+  }
+
+  .entry.impacts {
+    flex-basis: 2%;
+  }
+}
+
+/* Real Impacts -> Current Attacks */
+&.overview.real-impacts.current-attacks-enter.ng-leave { }
+
+&.overview.real-impacts.current-attacks-enter.ng-leave-active {
+  z-index: 2;
+
+  .entry {
+    flex-basis: 0%;
+  }
+
+  .entry.attacks {
+    flex-basis: 96%;
+
+    .holder {
+      opacity: 1;
+      .title {
+        transform: translateX(5%);
+      }
+    }
+  }
+
+  .entry.impacts,
+  .entry.threads{
+    flex-basis: 2%;
+  }
+}
