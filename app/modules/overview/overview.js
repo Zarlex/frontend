@@ -221,6 +221,6 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
             }
           ]
         }
-      })
+      });
 
   });
