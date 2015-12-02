@@ -22,6 +22,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
               classes: 'virtual-warfare-enter',
               process: function(el){
                 var holderEl = el.find('.entry.warfare .holder');
+
                 holderEl.animate({
                   width: '100%'
                 },1000);
@@ -29,7 +30,36 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
             },
             {
               route: '/overview/real-impacts',
-              classes: 'real-impacts-enter'
+              classes: 'real-impacts-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.impacts .holder');
+
+                holderEl.animate({
+                  width: '100%'
+                },1000);
+              }
+            },
+            {
+              route: '/overview/current-attacks',
+              classes: 'current-attacks-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.attacks .holder');
+
+                holderEl.animate({
+                  width: '100%'
+                },1000);
+              }
+            },
+            {
+              route: '/overview/potential-threads',
+              classes: 'potential-threads-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.threads .holder');
+
+                holderEl.animate({
+                  width: '100%'
+                },1000);
+              }
             }
           ]
         }
@@ -45,15 +75,23 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
           to: [
             {
               route: '/overview',
-              classes: 'index-enter'
+              classes: 'index-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.warfare .holder');
+
+                holderEl.animate({
+                  width: (holderEl.width()/2)+'px'
+                },1000);
+              }
             },
             {
               route: '/real-impacts',
               classes: 'real-impacts-enter',
               process: function(el){
                 var holderEl = el.find('.entry.warfare .holder');
+
                 holderEl.animate({
-                  width: holderEl.width+'px'
+                  width: (holderEl.width()/2)+'px'
                 },1000);
               }
             }
@@ -71,18 +109,118 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
           to: [
             {
               route: '/overview',
-              classes: 'index-enter'
+              classes: 'index-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.impacts .holder');
+
+                holderEl.animate({
+                  width: (holderEl.width()/2)+'px'
+                },1000);
+              }
             },
             {
               route: '/virtual-warfare',
-              classes: 'virtual-warfare-enter'
+              classes: 'virtual-warfare-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.impacts .holder');
+
+                holderEl.animate({
+                  width: (holderEl.width()/2)+'px'
+                },1000);
+              }
             },
             {
               route: '/current-attacks',
-              classes: 'current-attacks-enter'
+              classes: 'current-attacks-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.impacts .holder');
+
+                holderEl.animate({
+                  width: (holderEl.width()/2)+'px'
+                },1000);
+              }
             }
           ]
         }
-      });
+      })
+
+      .when('/overview/current-attacks', {
+        templateUrl: 'modules/overview/templates/current_attacks/current_attacks.html',
+        controller: 'CurrentAttacksController',
+        controllerAs: 'currentAttacksCtrl',
+        resolve: $injector.get('CurrentAttacksControllerResolver'),
+        cssClasses: 'overview current-attacks',
+        animationClasses: {
+          to: [
+            {
+              route: '/overview',
+              classes: 'index-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.attacks .holder');
+
+                holderEl.animate({
+                  width: (holderEl.width()/2)+'px'
+                },1000);
+              }
+            },
+            {
+              route: '/real-impacts',
+              classes: 'real-impacts-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.attacks .holder');
+
+                holderEl.animate({
+                  width: (holderEl.width()/2)+'px'
+                },1000);
+              }
+            },
+            {
+              route: '/potential-threads',
+              classes: 'potential-threads-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.attacks .holder');
+
+                holderEl.animate({
+                  width: (holderEl.width()/2)+'px'
+                },1000);
+              }
+            }
+          ]
+        }
+      })
+
+      .when('/overview/potential-threads', {
+        templateUrl: 'modules/overview/templates/potential_threads/potential_threads.html',
+        controller: 'PotentialThreadsController',
+        controllerAs: 'potentialThreadsCtrl',
+        resolve: $injector.get('PotentialThreadsControllerResolver'),
+        cssClasses: 'overview potential-threads',
+        animationClasses: {
+          to: [
+            {
+              route: '/overview',
+              classes: 'index-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.threads .holder');
+
+                holderEl.animate({
+                  width: (holderEl.width()/2)+'px'
+                },1000);
+              }
+            },
+            {
+              route: '/current-attacks',
+              classes: 'current-attacks-enter',
+              process: function(el){
+                var holderEl = el.find('.entry.threads .holder');
+
+                holderEl.animate({
+                  width: (holderEl.width()/2)+'px'
+                },1000);
+              }
+            }
+          ]
+        }
+      })
 
   });
