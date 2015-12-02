@@ -1,23 +1,5 @@
 /* Virtual-Warfare -> Overview */
 &.overview.virtual-warfare.index-enter.ng-leave {
-  z-index: 2;
-
-  .entry {
-    flex-basis: 0%;
-  }
-
-  .entry.warfare {
-    flex-basis: 100%;
-
-    .holder {
-      @include single-transition(width,1s,ease);
-      width: 100% !important;
-    }
-  }
-
-  .entry.warfare {
-    flex-basis: 2%;
-  }
 }
 
 &.overview.virtual-warfare.index-enter.ng-leave-active {
@@ -29,40 +11,11 @@
 
   .entry.warfare {
     flex-basis: 25%;
-
-    .holder {
-      width: 563px !important;
-      //width: 200% !important;
-    }
-  }
-
-  .entry.impacts {
-    flex-basis: 25%;
   }
 }
 
-
 /* Virtual-Warfare -> Real Impacts */
 &.overview.virtual-warfare.real-impacts-enter.ng-leave {
-  z-index: 2;
-
-  .entry {
-    flex-basis: 0%;
-  }
-
-  .entry.warfare {
-    flex-basis: 100%;
-
-    .holder {
-      @include single-transition(width,1s,ease);
-      width: 100%;
-    }
-  }
-
-  .entry.warfare {
-    flex-basis: 2%;
-    opacity: 1;
-  }
 }
 
 &.overview.virtual-warfare.real-impacts-enter.ng-leave-active {
@@ -74,22 +27,20 @@
 
   .entry.warfare {
     flex-basis: 2%;
-    .holder {
-      //width: 400% !important;
-    }
   }
 
   .entry.impacts {
-    flex-basis: 98%;
+    flex-basis: 96%;
 
     .holder {
-      @include single-transition(width,1s,ease);
-      width: 100% !important;
       opacity: 1;
+      .title {
+        transform: translateX(5%);
+      }
     }
   }
 
-  .entry.attacks{
+  .entry.attacks {
     flex-basis: 2%;
   }
 }

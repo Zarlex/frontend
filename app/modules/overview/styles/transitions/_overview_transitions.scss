@@ -1,14 +1,10 @@
-/* Overview -> Virtual Warfare */
 &.overview.ng-enter, &.view.ng-leave, &.view.ng-enter, &.view.ng-leave {
-  @include single-transition(all, 1s, ease);
+  @include single-transition(all, 1.1s, ease);
 }
 
-&.overview.index.virtual-warfare-enter.ng-leave {
 
-  .holder{
-    @include single-transition(width, 1s, ease);
-  }
-}
+/* Overview -> Virtual Warfare */
+&.overview.index.virtual-warfare-enter.ng-leave { }
 
 &.overview.index.virtual-warfare-enter.ng-leave-active {
   z-index: 1;
@@ -18,14 +14,10 @@
   }
 
   .entry.warfare {
-    flex-basis: 100%;
+    flex-basis: 98%;
 
-    //.holder {
-    //  width: 100% !important;
-    //}
-
-    .title {
-      transform: translateX(5%);
+    .holder .title {
+        transform: translateX(5%);
     }
   }
 
@@ -34,12 +26,10 @@
   }
 }
 
-&.overview.index.real-impacts-enter.ng-leave {
-
-}
-
 
 /* Overview -> Real Impacts */
+&.overview.index.real-impacts-enter.ng-leave { }
+
 &.overview.index.real-impacts-enter.ng-leave-active {
   z-index: 1;
 
@@ -48,19 +38,63 @@
   }
 
   .entry.impacts {
-    flex-basis: 100%;
+    flex-basis: 96%;
 
-    .holder {
-      width: 100% !important;
-    }
-
-    .title {
+    .holder .title {
       transform: translateX(5%);
     }
   }
 
   .entry.attacks,
   .entry.warfare{
+    flex-basis: 2%;
+  }
+}
+
+
+/* Overview -> Current Attacks */
+&.overview.index.current-attacks-enter.ng-leave { }
+
+&.overview.index.current-attacks-enter.ng-leave-active {
+  z-index: 1;
+
+  .entry {
+    flex-basis: 0;
+  }
+
+  .entry.attacks {
+    flex-basis: 96%;
+
+    .holder .title {
+      transform: translateX(5%);
+    }
+  }
+
+  .entry.impacts,
+  .entry.threads{
+    flex-basis: 2%;
+  }
+}
+
+/* Overview -> Potential Threads */
+&.overview.index.potential-threads-enter.ng-leave { }
+
+&.overview.index.potential-threads-enter.ng-leave-active {
+  z-index: 1;
+
+  .entry {
+    flex-basis: 0;
+  }
+
+  .entry.threads {
+    flex-basis: 98%;
+
+    .holder .title {
+      transform: translateX(5%);
+    }
+  }
+
+  .entry.attacks{
     flex-basis: 2%;
   }
 }

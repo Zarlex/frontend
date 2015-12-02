@@ -31,27 +31,22 @@ $threads-color: rgb(0, 255, 105);
       @include single-transition(flex-basis, 1s, ease);
 
       &.warfare {
-        background: rgb(192, 255, 217);
+        background: $warfare-color;
       }
 
       &.impacts {
-        background: rgb(128, 255, 179);
+        background: $impact-color;
       }
 
       &.attacks {
-        background: rgb(64, 255, 141);
+        background: $attacks-color;
       }
 
       &.threads {
-        background: rgb(0, 255, 105);
+        background: $threads-color;
       }
 
       .holder {
-        //height: 100%;
-        //display: flex;
-        //flex-direction: column;
-        //white-space: nowrap;
-
         height: 100%;
         display: flex;
         justify-content: center;
@@ -123,11 +118,6 @@ $threads-color: rgb(0, 255, 105);
         .btn-nav {
           width: 50%;
         }
-
-        .btn-impact {
-          background: rgb(128, 255, 179);
-          color: white;
-        }
       }
 
       &:hover {
@@ -157,8 +147,6 @@ $threads-color: rgb(0, 255, 105);
         }
 
         .holder {
-          //width: 100% !important;
-
           .title {
             transform: translateX(5%);
           }
@@ -192,6 +180,28 @@ $threads-color: rgb(0, 255, 105);
       .entry .holder {
         display: none;
       }
+    }
+  }
+
+  .btn{
+    &.warfare {
+      background: $warfare-color;
+      color: white;
+    }
+
+    &.impact {
+      background: $impact-color;
+      color: white;
+    }
+
+    &.attacks {
+      background: $attacks-color;
+      color: white;
+    }
+
+    &.threads {
+      background: $threads-color;
+      color: white;
     }
   }
 }
