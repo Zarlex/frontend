@@ -1,0 +1,67 @@
+/* Current Attacks -> Overview */
+&.overview.current-attacks.index-enter.ng-leave { }
+
+&.overview.current-attacks.index-enter.ng-leave-active {
+  z-index: 2;
+
+  .entry {
+    flex-basis: 25%;
+  }
+
+  .entry.attacks {
+    flex-basis: 25%;
+  }
+}
+
+/* Current Attacks -> Real Impacts */
+&.overview.current-attacks.real-impacts-enter.ng-leave { }
+
+&.overview.current-attacks.real-impacts-enter.ng-leave-active {
+  z-index: 2;
+
+  .entry {
+    flex-basis: 0%;
+  }
+
+  .entry.impacts {
+    flex-basis: 96%;
+
+    .holder {
+      opacity: 1;
+      .title {
+        transform: translateX(5%);
+      }
+    }
+  }
+
+  .entry.warfare,
+  .entry.attacks {
+    flex-basis: 2%;
+  }
+}
+
+/* Current Attacks -> Potential Threads */
+&.overview.current-attacks.potential-threads-enter.ng-leave { }
+
+&.overview.current-attacks.potential-threads-enter.ng-leave-active {
+  z-index: 2;
+
+  .entry {
+    flex-basis: 0%;
+  }
+
+  .entry.threads {
+    flex-basis: 98%;
+
+    .holder {
+      opacity: 1;
+      .title {
+        transform: translateX(5%);
+      }
+    }
+  }
+
+  .entry.attacks {
+    flex-basis: 2%;
+  }
+}
