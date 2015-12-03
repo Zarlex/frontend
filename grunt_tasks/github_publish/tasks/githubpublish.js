@@ -17,8 +17,6 @@ module.exports = function (grunt) {
 
         var currentBranch = git.getCurrentBranch();
 
-        git.stash();
-
         git.checkoutBranch('gh-pages');
 
         git.pull('gh-pages','origin');
@@ -64,9 +62,7 @@ module.exports = function (grunt) {
         git.push('gh-pages','origin');
 
         git.checkoutBranch(currentBranch);
-
-        git.stashApply();
-
+        
     });
 
     var Git = function(){
