@@ -1,6 +1,7 @@
 /**
  * Created by zarges on 03/12/15.
  */
+'use strict';
 
 angular.module('ZeroDay')
 
