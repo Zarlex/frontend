@@ -20,7 +20,9 @@ body {
   }
 
   *[ng-click] {
-    cursor: pointer;
+    &:not(.un-clickable){
+      cursor: pointer;
+    }
   }
 
   .full-screen-view {
