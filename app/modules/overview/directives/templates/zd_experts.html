@@ -1,0 +1,33 @@
+<style>
+  .experts.active{
+    color: red;
+  }
+</style>
+
+<span ng-repeat="expert in experts"
+      class="experts"
+      ng-class="{active: isQuoteOfExpertVisible(expert)}"
+      ng-click="gotoFirstQuoteOfExpert(expert)">
+  {{expert.name}}
+</span>
+
+<div zd-wizard="wizard">
+
+  <div ng-repeat="expert in experts">
+    <div ng-repeat="quote in expert.quotes">
+      <div zd-wizard-step title="{{expert.name}}" step-group="{{expert.id}}">
+        <cite>
+          {{quote}}
+        </cite>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<button ng-if="wizard.hasPreviousStep()"
+        ng-click="wizard.back()"><
+</button>
+<button ng-if="wizard.hasNextStep()"
+        ng-click="wizard.next()">>
+</button>
