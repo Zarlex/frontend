@@ -31,7 +31,7 @@ angular.module('ZeroDay')
                 if (animation.process && typeof animation.process === 'function') {
 
                   processFns.push(function () {
-                    animation.process.call(this, el, event, nextPage)
+                    animation.process.call(this, el, event, nextPage);
                   });
                 }
               }
