@@ -13,7 +13,8 @@ angular.module('ZeroDay')
   .directive('zdAppendClassAccordingToRoute', function ($rootScope, $route) {
     return {
       link: function (scope, el) {
-        var orgClasses = el.attr('class');
+        var orgClasses = el.attr('class'),
+          processFns = [];
 
         scope.$on('$routeChangeSuccess', function (event, current) {
           el.attr('class', orgClasses);
@@ -28,13 +29,21 @@ angular.module('ZeroDay')
                 el.addClass(animation.classes);
 
                 if (animation.process && typeof animation.process === 'function') {
-                  $rootScope.$on('$routeChangeSuccess', function(){
-                    animation.process.call(this, el, event, nextPage);
+
+                  processFns.push(function () {
+                    animation.process.call(this, el, event, nextPage)
                   });
                 }
               }
             });
           }
+        });
+
+        $rootScope.$on('$routeChangeSuccess', function () {
+          processFns.forEach(function(processFn){
+            processFn();
+          });
+          processFns = [];
         });
 
         scope.$on('$routeChangeSuccess', function (event, params, previousPage) {
@@ -60,7 +69,7 @@ angular.module('ZeroDay')
       },
       link: function (scope, el) {
         var setBackgroundPosition = function (posY) {
-          el.css('background-position', '0 0, 0 ' + posY );
+          el.css('background-position', '0 0, 0 ' + posY);
         };
 
         var throttled = _.throttle(function () {
