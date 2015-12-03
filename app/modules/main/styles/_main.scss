@@ -58,6 +58,9 @@ body {
     font-size: 16pt;
     padding: 10px;
     color: black;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
 
     &.primary{
       background: $zdPrimary;
