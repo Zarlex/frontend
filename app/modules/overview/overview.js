@@ -85,7 +85,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
               }
             },
             {
-              route: '/real-impacts',
+              route: '/overview/real-impacts',
               classes: 'real-impacts-enter',
               process: function(el){
                 var holderEl = el.find('.entry.warfare .holder');
@@ -119,7 +119,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
               }
             },
             {
-              route: '/virtual-warfare',
+              route: '/overview/virtual-warfare',
               classes: 'virtual-warfare-enter',
               process: function(el){
                 var holderEl = el.find('.entry.impacts .holder');
@@ -130,7 +130,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
               }
             },
             {
-              route: '/current-attacks',
+              route: '/overview/current-attacks',
               classes: 'current-attacks-enter',
               process: function(el){
                 var holderEl = el.find('.entry.impacts .holder');
@@ -164,7 +164,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
               }
             },
             {
-              route: '/real-impacts',
+              route: '/overview/real-impacts',
               classes: 'real-impacts-enter',
               process: function(el){
                 var holderEl = el.find('.entry.attacks .holder');
@@ -175,7 +175,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
               }
             },
             {
-              route: '/potential-threads',
+              route: '/overview/potential-threads',
               classes: 'potential-threads-enter',
               process: function(el){
                 var holderEl = el.find('.entry.attacks .holder');
@@ -209,7 +209,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
               }
             },
             {
-              route: '/current-attacks',
+              route: '/overview/current-attacks',
               classes: 'current-attacks-enter',
               process: function(el){
                 var holderEl = el.find('.entry.threads .holder');
