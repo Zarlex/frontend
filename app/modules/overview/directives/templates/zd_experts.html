@@ -6,7 +6,7 @@
          ng-class="{active: isQuoteOfExpertVisible(expert)}"
          ng-click="gotoFirstQuoteOfExpert(expert)">
 
-      <i class="{{getExpertIcon(expert)}}"></i>
+      <i class="{{expertIcons.getIconById(expert.id)}}"></i>
       <div class="info">
         <h4>{{expert.name}}</h4>
         <span>{{expert.description}}</span>
