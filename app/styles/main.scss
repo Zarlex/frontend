@@ -1,3 +1,7 @@
 @import "font_imports";
 @import "compass/css3";
+@import "../components/sass-bootstrap/lib/variables";
+@import "../components/sass-bootstrap/lib/mixins";
+@import "../components/sass-bootstrap/lib/component-animations";
+@import "../components/sass-bootstrap/lib/modals";
 @import "../modules/main/styles/main";
