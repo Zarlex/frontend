@@ -1,12 +1,12 @@
-$expert-font-path-prefix: "../fonts/experts";
+$zd-font-path-prefix: "../fonts/zero-day";
 
 @font-face {
   font-family: 'icomoon';
-  src:url('#{$expert-font-path-prefix}/experts.eot?s7gnkv');
-  src:url('#{$expert-font-path-prefix}/experts.eot?s7gnkv#iefix') format('embedded-opentype'),
-  url('#{$expert-font-path-prefix}/experts.ttf?s7gnkv') format('truetype'),
-  url('#{$expert-font-path-prefix}/experts.woff?s7gnkv') format('woff'),
-  url('#{$expert-font-path-prefix}/experts.svg?s7gnkv#icomoon') format('svg');
+  src:url('#{$zd-font-path-prefix}/zero-day.eot?s7gnkv');
+  src:url('#{$zd-font-path-prefix}/zero-day.eot?s7gnkv#iefix') format('embedded-opentype'),
+  url('#{$zd-font-path-prefix}/zero-day.ttf?s7gnkv') format('truetype'),
+  url('#{$zd-font-path-prefix}/zero-day.woff?s7gnkv') format('woff'),
+  url('#{$zd-font-path-prefix}/zero-day.svg?s7gnkv#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,4 +26,4 @@ $expert-font-path-prefix: "../fonts/experts";
   -moz-osx-font-smoothing: grayscale;
 }
 
-@import "font-definitions/experts";
+@import "font-definitions/zero_day";
