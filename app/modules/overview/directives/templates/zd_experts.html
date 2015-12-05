@@ -1,40 +1,42 @@
-<style>
-  .experts.active{
-    color: red;
-  }
+<div class="zd-experts">
 
-  .experts span{
-    font-size:150px;
-  }
-</style>
+  <div class="expert-holder">
+    <div ng-repeat="expert in experts"
+         class="experts"
+         ng-class="{active: isQuoteOfExpertVisible(expert)}"
+         ng-click="gotoFirstQuoteOfExpert(expert)">
 
-<span ng-repeat="expert in experts"
-      class="experts"
-      ng-class="{active: isQuoteOfExpertVisible(expert)}"
-      ng-click="gotoFirstQuoteOfExpert(expert)">
-  <span class="{{getExpertIcon(expert)}}"></span>
-</span>
-
-<div zd-wizard="wizard">
-
-  <div ng-repeat="expert in experts">
-    <div ng-repeat="quote in expert.quotes">
-      <div zd-wizard-step title="{{expert.name}}" step-group="{{expert.id}}">
-        <cite>
-          {{quote}}
-        </cite>
-        <span class="author">
-            {{expert.id}}
-          </span>
+      <i class="{{getExpertIcon(expert)}}"></i>
+      <div class="info">
+        <h4>{{expert.name}}</h4>
+        <span>{{expert.description}}</span>
       </div>
+
     </div>
   </div>
 
-</div>
+  <div class="spacer"></div>
 
-<button ng-if="wizard.hasPreviousStep()"
-        ng-click="wizard.back()"><
-</button>
-<button ng-if="wizard.hasNextStep()"
-        ng-click="wizard.next()">>
-</button>
+  <div zd-wizard="wizard" class="quote-holder">
+
+    <div ng-repeat="expert in experts">
+      <div ng-repeat="quote in expert.quotes">
+        <div zd-wizard-step title="{{expert.name}}" step-group="{{expert.id}}">
+          <cite>
+            {{quote}}
+          </cite>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="nav-btn prev-btn"
+          ng-if="wizard.hasPreviousStep()"
+          ng-click="wizard.back()"><
+  </button>
+  <button class="nav-btn next-btn"
+          ng-if="wizard.hasNextStep()"
+          ng-click="wizard.next()">>
+  </button>
+</div>
