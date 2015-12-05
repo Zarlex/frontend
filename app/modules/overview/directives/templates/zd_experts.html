@@ -2,13 +2,17 @@
   .experts.active{
     color: red;
   }
+
+  .experts span{
+    font-size:150px;
+  }
 </style>
 
 <span ng-repeat="expert in experts"
       class="experts"
       ng-class="{active: isQuoteOfExpertVisible(expert)}"
       ng-click="gotoFirstQuoteOfExpert(expert)">
-  {{expert.name}}
+  <span class="{{getExpertIcon(expert)}}"></span>
 </span>
 
 <div zd-wizard="wizard">
@@ -19,6 +23,9 @@
         <cite>
           {{quote}}
         </cite>
+        <span class="author">
+            {{expert.id}}
+          </span>
       </div>
     </div>
   </div>

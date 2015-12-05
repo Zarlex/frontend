@@ -4,6 +4,14 @@
 'use strict';
 
 angular.module('ZeroDay.Overview')
-  .controller('VirtualWarfareController', function() {})
+  .controller('VirtualWarfareController', function(expertQuotes) {
+    this.expertQuotes = expertQuotes;
+  })
 
-  .constant('VirtualWarfareControllerResolver', {});
+  .constant('VirtualWarfareControllerResolver', {
+    expertQuotes: ['$http', function($http){
+      return $http.get('static-content/expert-quotes/virtual-warfare.json').then(function(rsp){
+        return rsp.data.experts;
+      });
+    }]
+  });

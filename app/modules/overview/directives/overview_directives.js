@@ -33,38 +33,27 @@ angular.module('ZeroDay.Overview')
     };
   })
 
-  .directive('zdExperts', function (Wizard) {
+  .directive('zdExperts', function (Wizard, ExpertIcons) {
     return {
       scope: {
-        // experts: '=zdExperts'
+        experts: '=zdExperts'
       },
       templateUrl: 'modules/overview/directives/templates/zd_experts.html',
       controller: function ($scope) {
         this.wizardId = _.uniqueId('experts');
         $scope.wizard = Wizard.createWizard(this.wizardId);
-
-        $scope.experts = [
-          {
-            name: 'Max Musterman',
-            id: '1',
-            quotes: [
-              'The frog jumps over the moon. The the frog frog jumps jumps over over the the moon moon!',
-              'Lorem ipsum Dolorem daihatsu Siemens flexi iporem Maihamu'
-            ]
-          },
-          {
-            name: 'Peter Kirchner',
-            id: '2',
-            quotes: [
-              'True story, bro!',
-              'Best thing ever'
-            ]
-          }
-        ];
       },
       link: function (scope) {
 
         var activeExpertId;
+
+        scope.getExpertIcon = function(expert){
+          if(ExpertIcons[expert.id]){
+            return ExpertIcons[expert.id]
+          } else {
+            return
+          }
+        };
 
         scope.isQuoteOfExpertVisible = function(expert){
           if(activeExpertId && _.isArray(scope.experts)){

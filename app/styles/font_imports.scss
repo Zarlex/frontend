@@ -1,0 +1,29 @@
+$expert-font-path-prefix: "../fonts/experts";
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('#{$expert-font-path-prefix}/experts.eot?s7gnkv');
+  src:url('#{$expert-font-path-prefix}/experts.eot?s7gnkv#iefix') format('embedded-opentype'),
+  url('#{$expert-font-path-prefix}/experts.ttf?s7gnkv') format('truetype'),
+  url('#{$expert-font-path-prefix}/experts.woff?s7gnkv') format('woff'),
+  url('#{$expert-font-path-prefix}/experts.svg?s7gnkv#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@import "font-definitions/experts";
