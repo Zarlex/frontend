@@ -294,6 +294,16 @@
               }
             ]
           },
+          fonts: {
+            files: [
+              {
+                expand: true,
+                cwd: '<%= yeoman.app %>/fonts',
+                src: '**/*',
+                dest: '<%= yeoman.dist %>/fonts'
+              }
+            ]
+          },
           staticContent: {
             files: [
               {
@@ -401,6 +411,7 @@
     grunt.registerTask('prepareBuild', [
       'clean:tmp',
       'clean:dist',
+      'copy:fonts',
       'copy:staticContent',
       'copy:css',
       'copy:portalToTmpFolder'
