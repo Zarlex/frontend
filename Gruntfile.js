@@ -294,21 +294,14 @@
               }
             ]
           },
-          fonts: {
+          staticContent: {
             files: [
               {
                 expand: true,
-                cwd: '<%= yeoman.app %>/components/sass-bootstrap',
-                src: 'fonts/**/*',
-                dest: '<%= yeoman.app %>'
-              },
-              {
-                expand: true,
-                cwd: '<%= yeoman.app %>/components/font-awesome',
-                src: 'fonts/**/*',
-                dest: '<%= yeoman.app %>'
-              },
-              {expand: true, cwd: '<%= yeoman.app %>/modules/ui', src: 'fonts/**/*', dest: '<%= yeoman.app %>'}
+                cwd: '<%= yeoman.app %>/static-content',
+                src: '**/*',
+                dest: '<%= yeoman.dist %>/static-content'
+              }
             ]
           }
         },
@@ -408,7 +401,7 @@
     grunt.registerTask('prepareBuild', [
       'clean:tmp',
       'clean:dist',
-      'copy:fonts',
+      'copy:staticContent',
       'copy:css',
       'copy:portalToTmpFolder'
     ]);
