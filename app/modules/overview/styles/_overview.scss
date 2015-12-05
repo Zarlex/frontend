@@ -7,6 +7,11 @@
 @import "transitions/potential_threads_transitions";
 
 &.overview {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   .entries-holder {
     display: flex;
@@ -180,7 +185,7 @@
     }
   }
 
-  .btn{
+  .btn {
     &.warfare {
       background: $warfare-color;
       color: white;
@@ -201,13 +206,22 @@
       color: white;
     }
   }
+
+  .pull-out{
+    margin: 0 -8%;
+  }
 }
 
-&.view {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+.zd-modal {
+  .modal-body {
+    position: fixed;
+    top: 0;
+    max-height: 100%;
+    height: 100%;
+    background: transparent;
+    color: white;
+    padding: 14px 50px;
+    @include box-shadow(none);
+  }
 }
 

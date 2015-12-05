@@ -30,7 +30,7 @@
 
       &.active{
         i{
-          color:$warfare-color;
+          color:$expert-highlight-color;
         }
         .info{
           display: block;
@@ -41,14 +41,14 @@
 
   .spacer{
     height: 100px;
-    background: $warfare-color;
+    background: $expert-highlight-color;
   }
 
   .quote-holder{
     height: 260px;
     overflow: scroll;
     padding: 0 200px 40px 200px;
-    background: $warfare-color;
+    background: $expert-highlight-color;
 
     cite{
       color: $zdBlack !important;
