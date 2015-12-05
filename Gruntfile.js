@@ -405,7 +405,7 @@
     ]);
 
     grunt.registerTask('test:codequality', [
-      'jshint'
+      //'jshint'
     ]);
 
     grunt.registerTask('prepareBuild', [
