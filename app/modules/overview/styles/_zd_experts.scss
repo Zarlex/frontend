@@ -45,13 +45,15 @@
   }
 
   .quote-holder{
-    height: 380px;
+    height: 260px;
     overflow: scroll;
-    padding: 0 200px 20px 200px;
+    padding: 0 200px 40px 200px;
     background: $warfare-color;
 
     cite{
       color: $zdBlack !important;
+      font-size: 35px;
+      line-height: 48px;
     }
   }
 
