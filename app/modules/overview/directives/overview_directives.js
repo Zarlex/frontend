@@ -49,9 +49,7 @@ angular.module('ZeroDay.Overview')
 
         scope.getExpertIcon = function(expert){
           if(ExpertIcons[expert.id]){
-            return ExpertIcons[expert.id]
-          } else {
-            return
+            return ExpertIcons[expert.id];
           }
         };
 
