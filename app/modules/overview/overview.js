@@ -24,7 +24,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
                 var holderEl = el.find('.entry.warfare .holder');
 
                 holderEl.animate({
-                  width: '100%'
+                  width: holderEl.width()*2
                 },1000);
               }
             },
@@ -35,7 +35,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
                 var holderEl = el.find('.entry.impacts .holder');
 
                 holderEl.animate({
-                  width: '100%'
+                  width: holderEl.width()*2
                 },1000);
               }
             },
@@ -46,7 +46,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
                 var holderEl = el.find('.entry.attacks .holder');
 
                 holderEl.animate({
-                  width: '100%'
+                  width: holderEl.width()*2
                 },1000);
               }
             },
@@ -57,7 +57,7 @@ angular.module('ZeroDay.Overview', ['ZeroDay'])
                 var holderEl = el.find('.entry.threads .holder');
 
                 holderEl.animate({
-                  width: '100%'
+                  width: holderEl.width()*2
                 },1000);
               }
             }

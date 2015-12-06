@@ -11,6 +11,10 @@
 
   .entry {
     flex-basis: 0;
+
+    &:not(.warfare) .holder{
+      opacity: 0;
+    }
   }
 
   .entry.warfare {
@@ -35,6 +39,10 @@
 
   .entry {
     flex-basis: 0;
+
+    &:not(.impacts) .holder{
+      opacity: 0;
+    }
   }
 
   .entry.impacts {
@@ -60,6 +68,10 @@
 
   .entry {
     flex-basis: 0;
+
+    &:not(.attacks) .holder{
+      opacity: 0;
+    }
   }
 
   .entry.attacks {
@@ -84,6 +96,10 @@
 
   .entry {
     flex-basis: 0;
+
+    &:not(.threads) .holder{
+      opacity: 0;
+    }
   }
 
   .entry.threads {
