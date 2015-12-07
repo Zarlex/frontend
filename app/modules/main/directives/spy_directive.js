@@ -15,37 +15,16 @@ angular.module('ZeroDay')
         };
       },
       link: function (scope, elem, attrs) {
+        var bodyEl   = angular.element(document.body),
+            id = attrs.id;
 
-        var $window = $(window)
-        var $body   = $(document.body)
+        if(!id){
+          throw new Error('And ID has to be defined as attribute');
+        }
 
-        $body.scrollspy({
-          target: '.bs-docs-sidebar'
+        bodyEl.scrollspy({
+          target: id
         });
-        $window.on('load', function () {
-          $body.scrollspy('refresh')
-        });
-
-        // Kill links
-        $('.bs-docs-container [href=#]').click(function (e) {
-          e.preventDefault()
-        });
-
-        // Sidenav affixing
-        setTimeout(function () {
-          var $sideBar = $('.calendar')
-
-          $sideBar.affix({
-            offset: {
-              top: function () {
-                var offsetTop      = $sideBar.offset().top
-                var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
-
-                return (this.top = offsetTop - sideBarMargin -20)
-              }
-            }
-          })
-        }, 100)
       }
     };
   })
