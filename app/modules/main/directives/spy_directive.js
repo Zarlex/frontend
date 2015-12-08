@@ -23,7 +23,7 @@ angular.module('ZeroDay')
         }
 
         bodyEl.scrollspy({
-          target: id
+          target: '#'+id
         });
       }
     };
