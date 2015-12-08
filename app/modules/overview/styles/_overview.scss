@@ -214,10 +214,15 @@
       display: none;
     }
 
+    li a{
+      text-decoration: none;
+      color: $zdBlack;
+    }
+
     li.active{
 
       > a{
-        color: red;
+        color: #40ff8d;
       }
 
       > ul {
