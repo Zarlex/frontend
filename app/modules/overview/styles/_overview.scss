@@ -58,23 +58,32 @@
 
         object {
           //width: 100%;
-          flex-basis: 85%;
+          padding-right: 11%;
+          //padding-top: 15%;
+          //margin-top: 15%;
+          flex-basis: 70%;
           pointer-events: none;
         }
 
         .title {
           position: relative;
           padding: 16px;
+          padding-left: 11%;
           flex-basis: 15%;
           transform: translateY(18px);
           @include single-transition(transform, 1s, ease);
 
           h2, p {
             margin: 0;
+            font-size: 22px;
+            text-transform: uppercase;
+            font-family:"Apercu Bold", Calibri, Roboto, sans-serif;
           }
 
           p {
             opacity: 0;
+            font-size: 15px;
+            font-family:"Apercu Regular", Calibri, Roboto, sans-serif;
             @include single-transition(opacity, 1s, ease);
           }
         }
