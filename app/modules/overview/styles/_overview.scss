@@ -6,6 +6,7 @@
 @import "transitions/current_attacks_transitions";
 @import "transitions/potential_threads_transitions";
 
+
 &.overview {
   width: 100%;
   height: 100%;
@@ -89,41 +90,7 @@
         }
       }
 
-      .content-holder {
-        white-space: normal;
-
-        article {
-          margin: 0 8% 50px 8%;
-          font-size: 22px;
-
-          h3 {
-            text-transform: uppercase;
-            font-size: 35px;
-          }
-
-          > p {
-            padding: 2%;
-          }
-
-          cite {
-            color: $zdPrimary;
-
-            &:before {
-              content: "»"
-            }
-
-            &:after {
-              content: "«"
-            }
-
-            ~ .author {
-              &:before {
-                content: "—"
-              }
-            }
-          }
-        }
-      }
+      @import "content";
 
       .button-holder {
         .btn-nav {
@@ -217,7 +184,7 @@
   }
 
   .pull-out{
-    margin: 0 -8%;
+    margin: 0 -9%;
   }
 }
 
@@ -231,6 +198,60 @@
     color: white;
     padding: 14px 50px;
     @include box-shadow(none);
+  }
+}
+
+.spy-holder{
+  &:after{
+    content: '';
+    clear: both;
+  }
+  .calendar,
+  .content{
+    float: left;
+  }
+
+  .calendar{
+    width: 20%;
+    position: relative;
+    margin-top: 40px;
+
+    li > ul{
+      position: absolute;
+      top: 0;
+      left: 80px;
+      display: none;
+    }
+
+    li a{
+      text-decoration: none;
+      color: $zdBlack;
+    }
+
+    li.active{
+
+      > a{
+        color: #40ff8d;
+      }
+
+      > ul {
+        display: block;
+      }
+
+    }
+  }
+
+  .content{
+    width: 80%;
+  }
+
+  .calendar.affix{
+    position: fixed;
+    top: 10px;
+
+    ~ .content{
+      margin-left: 20%;
+    }
   }
 }
 
