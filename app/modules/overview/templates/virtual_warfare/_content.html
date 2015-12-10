@@ -16,9 +16,9 @@
 
 <article>
   <h3>Was meinen die Experten?</h3>
-
-  <div class="pull-out" zd-experts="virtualWarfareCtrl.expertQuotes"></div>
 </article>
+
+<div zd-experts="virtualWarfareCtrl.expertQuotes"></div>
 
 <article>
   <h3>Was ändert sich an der Kriegsführung?</h3>
@@ -28,16 +28,87 @@
         Der Aufmarsch wird lautlos sein. Kein Panzer rollt, keine Geschütze donnern, keine Flieger dröhnen durch die Luft. Nur Tastaturklappern und Mausklicks – so klingt der Krieg der Zukunft.
     </cite>
     <span class="author">Christian Bartlau 2015</span>
-    <p>
-        Cyberwar unterscheidet sich wesentlich von konventioneller Kriegsführung. Die spezifischen Möglichkeiten von Cyberattacken verändern die Bedingungen für Angreifer wie für Angegriffene.
-    </p>
   </div>
+
+  <br>
+  <p>
+    Cyberwar unterscheidet sich wesentlich von konventioneller Kriegsführung. Die spezifischen Möglichkeiten von Cyberattacken verändern die Bedingungen für Angreifer wie für Angegriffene.
+  </p>
+
 </article>
 
 <article>
   <h3>Charakteristika der neuen Kriegsführung</h3>
 
-  <div zd-fill-icon-on-hover="GUY"
-       constants="virtualWarfareCtrl.WarfareIcons"
-       ng-click="virtualWarfareCtrl.vwWarModal.show()"></div>
+  <style>
+    .characteristca-holder{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .characteristica{
+      text-align: center;
+      margin: 20px;
+      text-transform: uppercase;
+      max-width: 200px;
+    }
+
+    .characteristica span{
+      font-size: 140px;
+    }
+  </style>
+
+  <div class="characteristca-holder">
+
+    <div class="characteristica">
+      <div zd-fill-icon-on-hover="STOPWATCH"
+           constants="virtualWarfareCtrl.WarfareIcons"
+           ng-click="virtualWarfareCtrl.vwTimeModal.show()"></div>
+      <h4>
+        Krieg ohne Raum und Zeit
+      </h4>
+    </div>
+
+    <div class="characteristica">
+      <div zd-fill-icon-on-hover="GHOST"
+           constants="virtualWarfareCtrl.WarfareIcons"
+           ng-click="virtualWarfareCtrl.vwInvisibleModal.show()"></div>
+      <h4>
+        Unsichtbare Angriffe
+      </h4>
+    </div>
+
+    <div class="characteristica">
+      <div zd-fill-icon-on-hover="GUY"
+           constants="virtualWarfareCtrl.WarfareIcons"
+           ng-click="virtualWarfareCtrl.vwAttributationModal.show()"></div>
+      <h4>
+        Attributations Problem
+      </h4>
+    </div>
+
+    <div class="characteristica">
+      <div zd-fill-icon-on-hover="MONEYBAG"
+           constants="virtualWarfareCtrl.WarfareIcons"
+           ng-click="virtualWarfareCtrl.vwMoneyModal.show()"></div>
+      <h4>
+        Geringes Risiko und kleines Geld
+      </h4>
+    </div>
+
+    <div class="characteristica">
+      <div zd-fill-icon-on-hover="BRAIN"
+           constants="virtualWarfareCtrl.WarfareIcons"
+           ng-click="virtualWarfareCtrl.vwHackerModal.show()"></div>
+      <h4>
+        Hohe Hacker Kompetenz
+      </h4>
+    </div>
+
+    <div style="clear: both"></div>
+
+  </div>
+
 </article>

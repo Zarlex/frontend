@@ -4,10 +4,23 @@
 'use strict';
 
 angular.module('ZeroDay.Overview')
-  .controller('VirtualWarfareController', function(vwWarModal, WarfareIcons, expertQuotes) {
-    this.expertQuotes = expertQuotes;
-    this.vwWarModal = new vwWarModal();
+  .controller('VirtualWarfareController', function(
+    vwAttributationModal,
+    vwHackerModal,
+    vwMoneyModal,
+    vwTimeModal,
+    vwInvisibleModal,
+    WarfareIcons,
+    expertQuotes) {
+
+    this.vwAttributationModal = new vwAttributationModal();
+    this.vwHackerModal = new vwHackerModal();
+    this.vwMoneyModal = new vwMoneyModal();
+    this.vwTimeModal = new vwTimeModal();
+    this.vwInvisibleModal = new vwInvisibleModal();
+
     this.WarfareIcons = WarfareIcons;
+    this.expertQuotes = expertQuotes;
   })
 
   .constant('VirtualWarfareControllerResolver', {
