@@ -9,7 +9,7 @@
       position: relative;
 
       i {
-        font-size: 15vw;
+        font-size: 16vw;
       }
 
       .info{
@@ -17,14 +17,16 @@
         display: none;
         color: $zdBlack;
         padding: 10px;
-        width: 200%;
+        width: 90%;
+        line-height: 12pt;
 
         h4{
-          font-size: 22px;
+          font-size: 20px;
           margin: 0 0 5px 0;
+          line-height: 20pt;
         }
         span{
-          font-size: 15px;
+          font-size: 14px;
         }
       }
 
@@ -40,12 +42,12 @@
   }
 
   .spacer{
-    height: 100px;
+    height: 150px;
     background: $expert-highlight-color;
   }
 
   .quote-holder{
-    height: 260px;
+    height: 300px;
     overflow: scroll;
     padding: 0 200px 40px 200px;
     background: $expert-highlight-color;

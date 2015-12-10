@@ -1,0 +1,28 @@
+{
+  "experts": [
+    {
+      "id": "SANDRO_GAYCKEN",
+      "name": "Sandro Gaycken",
+      "description": "US Sicherheitsexperte und Politikwissenschaftler",
+      "quotes": [
+        "Kritische Strukturen haben am Internet nichts verloren. […] Warum also sollten wir unsere kritischen Strukturen mit jedem potentiellen Angreifer in der Welt verbinden wollen? [...] Vernetzung ist aus der Sicherheitsperspektive immer eine schlechte Idee. Denn wann immer etwas vernetzt wird, weiß der Angreifer, dass er nun einmal einbrechen muss, um das gesamte Netzwerk übernehmen zu können."
+      ]
+    },
+    {
+      "id": "CHRISTIAN_BARLAU",
+      "name": "Christian Bartlau",
+      "description": "Zeit-online",
+      "quotes": [
+        "In Deutschland brauchten Hacker in einem Test zwei Tage, um die Strom- und Wasserversorgung der Stadt Ettlingen unter ihre Kontrolle zu bringen."
+      ]
+    },
+    {
+      "id": "RICHARD_CLARKE",
+      "name": "Richard A. Clarke",
+      "description": "US-Sicherheitsexperte",
+      "quotes": [
+        "Das deutlichste Beispiel für die Abhängigkeit von Computersteuerung und für die Verwundbarkeit dieser Systeme ist in den USA ausgerechnet jenes vernetzte System, von dem alle anderen abhängen: das Stromnetz."
+      ]
+    }
+  ]
+}

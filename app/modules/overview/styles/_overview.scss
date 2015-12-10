@@ -54,14 +54,12 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+       
 
         @include single-transition(opacity, 1s, ease);
 
         object {
           //width: 100%;
-          padding-right: 11%;
-          //padding-top: 15%;
-          //margin-top: 15%;
           flex-basis: 70%;
           pointer-events: none;
         }

@@ -2,8 +2,8 @@
   white-space: normal;
 
   article {
-    margin: 0 8% 50px 8%;
-    font-size: 22px;
+    margin: 15% 8% 35px 16%;
+    font-size: 20px;
 
     h3 {
       text-transform: uppercase;
@@ -11,11 +11,19 @@
     }
 
     > p {
-      padding: 2%;
+      padding-left: 10%;
+      width: 65%;
+      margin-top: 0;
+
     }
 
     cite {
       color: $zdPrimary;
+      font-family: "Apercu Regular", Calibri, Roboto, sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20pt;
+      line-height: 26.4pt;
 
       &:before {
         content: "»"
@@ -27,7 +35,7 @@
 
       ~ .author {
         &:before {
-          content: "—"
+          content: ""
         }
       }
     }

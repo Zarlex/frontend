@@ -7,7 +7,7 @@ angular.module('ZeroDay.Overview')
 
   .factory('vwWarModal', function (Modal) {
     return Modal.prepare({
-      templateUrl: 'modules/overview/modals/templates/virtual_warfare/raum-zeit.html',
+      templateUrl: 'modules/overview/modals/templates/virtual_warfare/war.html',
       controller: 'VwWarModalController',
       class: 'virtual-warfare-modal war'
     });
