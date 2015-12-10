@@ -27,3 +27,8 @@ $zd-font-path-prefix: "../fonts/zero-day";
 }
 
 @import "font-definitions/zero_day";
+
+.icon-Pfeil_experten_left{
+  @extend .icon-Pfeil_experten;
+  transform: rotate(180deg);
+}
