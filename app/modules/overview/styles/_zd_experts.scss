@@ -9,7 +9,7 @@
       position: relative;
 
       i {
-        font-size: 16vw;
+        font-size: 13vw;
       }
 
       .info{
@@ -61,7 +61,8 @@
 
   .nav-btn{
     position: absolute;
-    bottom: 40%;
+    bottom: 30%;
+    font-size: 90px;
 
     &.next-btn{
       right: 68px;
