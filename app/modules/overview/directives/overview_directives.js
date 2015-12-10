@@ -33,7 +33,7 @@ angular.module('ZeroDay.Overview')
     };
   })
 
-  .directive('zdExperts', function (Wizard, ExpertIcons) {
+  .directive('zdExperts', function (Wizard, ExpertIcons, Icons) {
     return {
       scope: {
         experts: '=zdExperts'
@@ -48,6 +48,7 @@ angular.module('ZeroDay.Overview')
         var activeExpertId;
 
         scope.expertIcons = ExpertIcons;
+        scope.Icons = Icons;
 
         scope.isQuoteOfExpertVisible = function(expert){
           if(activeExpertId && _.isArray(scope.experts)){
@@ -85,16 +86,15 @@ angular.module('ZeroDay.Overview')
     };
   })
 
-  .directive('zdFillIconOnHover', function($timeout){
+  .directive('zdFillIconOnHover', function(){
     return {
       scope: {
         id: '@zdFillIconOnHover',
         constants: '='
       },
       template: '<span class="{{getIcon()}}" ng-mouseover="isHover = true" ng-mouseleave="isHover = false"></span>',
-      link: function(scope, el, attrs){
+      link: function(scope){
         scope.isHover = false;
-
         scope.getIcon = function(){
           if(scope.isHover){
             return scope.constants.getIconById(scope.id+'_F');
