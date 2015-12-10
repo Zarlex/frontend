@@ -5,7 +5,7 @@
 
 angular.module('ZeroDay')
 
-  .directive('zdSpyHolder', function($timeout){
+  .directive('zdSpyHolder', function(){
     return {
       restrict: 'A',
       controller: function ($scope) {
@@ -25,6 +25,10 @@ angular.module('ZeroDay')
         bodyEl.scrollspy({
           target: '#'+id
         });
+
+        bodyEl.data()['bs.scrollspy'].activate = function () {
+          $bootstrapActivate.apply(bodyEl.data()['bs.scrollspy'], arguments);
+        };
       }
     };
   })
@@ -52,3 +56,33 @@ angular.module('ZeroDay')
       }
     };
   });
+
+/* jshint ignore:start */
+// This is the orginal bootstrap activate implementation with the only
+// modification that it just removes the active class of the parent nav el and
+// NOT from ALL parent elements!
+var $bootstrapActivate = function (target) {
+  this.activeTarget = target
+
+  $(this.selector)
+    .parents('.nav') // This is the modification part
+    .find('.active')
+    .removeClass('active')
+
+  var selector = this.selector
+    + '[data-target="' + target + '"],'
+    + this.selector + '[href="' + target + '"]'
+
+  var active = $(selector)
+    .parents('li')
+    .addClass('active')
+
+  if (active.parent('.dropdown-menu').length) {
+    active = active
+      .closest('li.dropdown')
+      .addClass('active')
+  }
+
+  active.trigger('activate')
+}
+/* jshint ignore:end */
