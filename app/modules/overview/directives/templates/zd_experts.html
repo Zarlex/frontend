@@ -31,12 +31,11 @@
 
   </div>
 
-  <button class="nav-btn prev-btn"
-          ng-if="wizard.hasPreviousStep()"
-          ng-click="wizard.back()"><
-  </button>
-  <button class="nav-btn next-btn"
-          ng-if="wizard.hasNextStep()"
-          ng-click="wizard.next()">>
-  </button>
+  <span ng-if="wizard.hasPreviousStep()"
+        class="nav-btn prev-btn {{Icons.getIconById('ARROW_LEFT')}}"
+        ng-click="wizard.back()"></span>
+
+  <span ng-if="wizard.hasNextStep()"
+        class="nav-btn next-btn {{Icons.getIconById('ARROW_RIGHT')}}"
+        ng-click="wizard.next()"></span>
 </div>
