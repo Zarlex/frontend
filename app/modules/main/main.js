@@ -19,8 +19,10 @@ angular.module('ZeroDay', [
 
   })
 
-  .run(function($rootScope, $location){
+  .run(function($rootScope, $location, Icons){
     $rootScope.goTo = function(path){
       $location.path(path);
     };
+
+    $rootScope.Icons = Icons;
   });
