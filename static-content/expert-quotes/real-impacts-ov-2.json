@@ -1,0 +1,28 @@
+{
+  "experts": [
+    {
+      "id": "MALTE_HERWIG",
+      "name": "Malte Herwig",
+      "description": "Stern.de",
+      "quotes": [
+        "´Das Internet hat sich längst selbst zu einer kritischen Infrastruktur entwickelt´, sagte Innenminister Thomas de Maizière in der vergangenen Woche. Größere Ausfälle könnten ´kritisch für unser Land werden´. Wenn alles mit allem vernetzt ist, Wirtschaft und Börsen, Märkte und Menschen – dann kann Sabotage verheerende Folgen haben."
+      ]
+    },
+    {
+      "id": "SANDRO_GAYCKEN",
+      "name": "Sandro Gaycken",
+      "description": "US Sicherheitsexperte und Politikwissenschaftler",
+      "quotes": [
+        "Die IT-Sicherheitsfirma McAfee entdeckte die Operation „Night Dragon“. Über mehrere Monate hinweg waren verschiedenste Unternehemen aus dem Energiesektor – Öl, Gas, Strom – mit einer hochqualifizierten Cyberattacke angegriffen und ausgehorcht worden [...] Die Börse. Tausende und abertausende Rechner, die dicksten Datenleitungen des Landes, unzählige Programme, Protokolle, Verbindungen. […] Man schlug einige Zigtausen Angriffe pro Tag erfolgreich zurück. Allerdings wussten die Insider: das waren nur die uninteressanten, automatisierten Angriffe aus dem Internet, die sowieso alles und jeden trafen. Daneben gab es an der Börse aber noch einige gezielte Aktivitäten, die weniger offen gelegt wurden. […] Sie entdeckten viele kleine hochqualifizierte, gezielte Angriffe, die teilweise über Jahre hinweg kleinste, unauffällige Manipulationen direkt an Kursen oder Hintergrundinformationen vorgenommen hatten, um Börse und Banker zu beeinflussen."
+      ]
+    },
+    {
+      "id": "K_SAALBACH",
+      "name": "K. Saalbach",
+      "description": "Professor für Politikwissenschaften Universität Osnabrück",
+      "quotes": [
+        "Komplexe Industriemaschinen, die durch SCADA- und ICS-Systeme gesteuert werden, stellen neben Autos und Flugzeugen das wichtigste Sicherheitsproblem dar, wobei diese Maschinen zu gezielten Angriffen auf die Infrastrukturen oder Individuen genutzt werden können."
+      ]
+    }
+  ]
+}
