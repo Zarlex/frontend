@@ -13,6 +13,11 @@ angular.module('ZeroDay.Overview')
     });
   })
 
-  .controller('VwInvisibleModalController', function ($scope, WarfareIcons) {
+  .controller('VwInvisibleModalController', function ($scope, $http, WarfareIcons) {
     $scope.WarfareIcons = WarfareIcons;
+    $scope.expertQuotes = [];
+
+    $http.get('static-content/expert-quotes/virtual-warfare-ov-2.json').then(function(rsp){
+      $scope.expertQuotes = rsp.data.experts;
+    });
   });
