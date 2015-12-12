@@ -9,8 +9,7 @@
   }
 
   .bg-pattern{
-    background: linear-gradient( to bottom, transparent, transparent 80%, #05ee66 80%, #05ee66),linear-gradient( to left, #05ee66, #05ee66 60%, #00ff69 60%, #00ff69);
-    background-size: 15px 47px;
+    @include grid-bg(#05ee66, #00ff69);
   }
 
   .bg-overlay{

@@ -6,6 +6,7 @@
 var getRelativeScrollPos = function (axis) {
   var screenHeight = angular.element(window).height(),
     scrollPos = window['scroll' + axis.toUpperCase()];
+
   return scrollPos / screenHeight * 100;
 };
 
@@ -65,11 +66,16 @@ angular.module('ZeroDay')
   .directive('zdSetBackgroundPositionOnScroll', function () {
     return {
       scope: {
-        parallaxOffset: '='
+        parallaxOffset: '=',
+        noOverlay: '='
       },
       link: function (scope, el) {
         var setBackgroundPosition = function (posY) {
-          el.css('background-position', '0 0, 0 ' + posY);
+          if(scope.noOverlay){
+            el.css('background-position', '0 ' + posY + ', 0 0');
+          } else {
+            el.css('background-position', '0 0, 0 ' + posY);
+          }
         };
 
         var throttled = _.throttle(function () {
@@ -107,6 +113,31 @@ angular.module('ZeroDay')
         angular.element(window).on('scroll', throttled);
       }
     };
+  })
+
+  .directive('zdFadeInOnScroll', function(){
+    return {
+      link: function(scope, el, attrs){
+        var max;
+
+        if(attrs.maxOpacity) {
+           max = parseInt(attrs.maxOpacity, 10);
+        }
+
+        var throttled = _.throttle(function () {
+          var relativeScrollPos = getRelativeScrollPos('Y');
+          if(max){
+            var opaVal = (relativeScrollPos/100 * max);
+            opaVal = opaVal > max? max: opaVal;
+            el.css('opacity', opaVal/100);
+          } else {
+            el.css('opacity', relativeScrollPos/100);
+          }
+        }, 10);
+
+        angular.element(window).on('scroll', throttled);
+      }
+    }
   })
 
   .directive('zdFadeToColorOnScroll', function () {

@@ -1,14 +1,21 @@
 @import "vars";
 @import "zd_modal";
 
+@mixin grid-bg($color1, $color2) {
+  background:
+          linear-gradient(to bottom, transparent, transparent 80%, $color1 80%, $color1),
+          linear-gradient(to left, $color1, $color1 60%, $color2 60%, $color2);
+  background-size: 15px 47px;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family:"Apercu Regular", Calibri, Roboto, sans-serif;
-  font-size-adjust:0.508;
-  font-weight:normal;
-  font-style:normal;
+  font-family: "Apercu Regular", Calibri, Roboto, sans-serif;
+  font-size-adjust: 0.508;
+  font-weight: normal;
+  font-style: normal;
   color: $zdBlack;
 }
 
@@ -20,7 +27,7 @@ body {
   }
 
   *[ng-click] {
-    &:not(.un-clickable){
+    &:not(.un-clickable) {
       cursor: pointer;
     }
   }
@@ -53,7 +60,7 @@ body {
     z-index: 9;
   }
 
-  .btn{
+  .btn {
     border: none;
     color: white;
     background: white;
@@ -64,7 +71,7 @@ body {
     text-align: center;
     text-decoration: none;
 
-    &.primary{
+    &.primary {
       background: $zdPrimary;
     }
   }

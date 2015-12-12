@@ -1,5 +1,7 @@
 .content-holder {
   white-space: normal;
+  position: relative;
+  z-index: 1;
 
   article {
     margin: 15% 8% 35px 16%;
@@ -36,6 +38,24 @@
       ~ .author {
         &:before {
           content: ""
+        }
+      }
+    }
+
+    .ovlerlay-btns-holder{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      .overlay-btn{
+        text-align: center;
+        margin: 20px;
+        text-transform: uppercase;
+        max-width: 200px;
+
+        span{
+          font-size: 140px;
         }
       }
     }

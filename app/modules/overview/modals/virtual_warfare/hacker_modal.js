@@ -13,6 +13,6 @@ angular.module('ZeroDay.Overview')
     });
   })
 
-  .controller('VwHackerModalController', function ($scope, WarfareIcons) {
+  .controller('VwHackerModalController', function ($scope, $http, WarfareIcons) {
     $scope.WarfareIcons = WarfareIcons;
   });

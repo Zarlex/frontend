@@ -9,7 +9,7 @@
       ]
     },
     {
-      "id": "PW_SINGER",
+      "id": "PETER_SINGER",
       "name": "P.W. Singer",
       "description": "US Sicherheitsexperte und Politikwissenschaftler",
       "quotes": [
@@ -23,6 +23,6 @@
       "quotes": [
         "Was Du brauchst ist, drei Hacker mit einem schiefen moralischen Kompass und ein bisschen Geld."
       ]
-    },
+    }
   ]
 }
