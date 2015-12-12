@@ -3,7 +3,7 @@
     {
       "id": "PETER_SINGER",
       "name": "P.W. Singer",
-      "description": "US Sicherheitsexperte und Politikwissenschaftler",
+      "description": "US-Sicherheitsexperte",
       "quotes": [
         "Whether it be war on land, at sea, or in the air, or now in cyberspace, war always has a political goal and mode (which distinguishes it from crime) and always has an element of violence […] the effect must be physical damage or destruction. […] Knowing when cyberwar begins or ends, however, might be more challenging than defining it."
       ]
@@ -11,15 +11,15 @@
     {
       "id": "SANDRO_GAYCKEN",
       "name": "Sandro Gaycken",
-      "description": "US Sicherheitsexperte und Politikwissenschaftler",
+      "description": "Sicherheitsforscher FU Berlin",
       "quotes": [
-        "Wer über gute Cybertruppen verfügt, kann unentdeckt und im Geheimen die Machtgewichtungen der Welt entscheidend verändern. Er kann seine Gegener gegeneinander aufhetzen, er kann ihre Wirtschaft schwächen, er kann ihr Wissen stehlen und es zum Aufbau seiner eigenen Wirtschaft verwenden, er kann die internationalen Börsen so manipulieren, dass sie ihm nützen und dem er schaden, er kann im Internet die politischen Meinungen weltweit beeinflussen, er wird der Herr über die Infrastrukturen potentieller Gegener sein – und sollte tatsächlich einer dieser Gegener einmal gegen ihn vorrücken wollen, wird er jedes militärische Gerät, das auf Informationstechnik beruht, frühzeitig infiltriert haben und es bereits beherrschen."
+        "Wer über gute Cybertruppen verfügt, kann unentdeckt und im Geheimen die Machtgewichtungen der Welt entscheidend verändern. Er kann seine Gegener gegeneinander aufhetzen, er kann ihre Wirtschaft schwächen, er kann ihr Wissen stehlen und es zum Aufbau seiner eigenen Wirtschaft verwenden, er kann die internationalen Börsen so manipulieren, dass sie ihm nützen und dem Gegner schaden, er kann im Internet die politischen Meinungen weltweit beeinflussen."
       ]
     },
     {
       "id": "FELIX_LINDNER",
       "name": "Felix Lindner",
-      "description": "Technik- und Sicherheitsforscher FU Berlin",
+      "description": "Hacker und IT-Security-Experte",
       "quotes": [
         "Ob es Cyberangriffe gegeben hat ist eine Definitionsfrage und daher strittig. Nationalstaatliche  Aktivitäten  nehmen  allerdings  definitiv kontinuierlich zu, das ist leider kein Marketing, so sehr ich mir das auch wünschen würde."
       ]
@@ -27,9 +27,9 @@
     {
       "id": "FRANCOIS_DELERUE",
       "name": "François Delerue",
-      "description": "Hacker und IT-Security-Experte",
+      "description": "Hochschulinstitut in Florenz",
       "quotes": [
-        "Unter Cyberkrieg im eigentlichen Sinn versteht man militärische Operationen, die sich informationstechnischer Systeme und Netzwerke bedienen, um den Feind anzugreifen. Dabei muss der Cyberkrieg von anderen Angriffen auf die Cybersicherheit wie Cyberkriminalität, Cyberterrorismus und Cyberspionage unterschieden werden. Letztere erfolgen vorwiegend durch Teile der Zivilgesellschaft (Einzelpersonen, Gruppierungen oder Unternehmen) und unterliegen der nationalen Rechtsprechung, was mitunter problematisch ist. Im Gegensatz dazu stehen sich im Cyberkrieg ausschließlich öffentliche Akteuren gegenüber, deren Beziehungen durch das Völkerrecht geregelt werden."
+        "Unter Cyberkrieg im eigentlichen Sinn versteht man militärische Operationen, die sich informationstechnischer Systeme und Netzwerke bedienen, um den Feind anzugreifen. Dabei muss der Cyberkrieg von anderen Angriffen auf die Cybersicherheit wie Cyberkriminalität, Cyberterrorismus und Cyberspionage unterschieden werden. […] Im Gegensatz dazu stehen sich im Cyberkrieg ausschließlich öffentliche Akteuren gegenüber, deren Beziehungen durch das Völkerrecht geregelt werden."
       ]
     },
     {
@@ -53,7 +53,7 @@
       "name": "Thomas Rid",
       "description": "Department of War Studies am King´s College London",
       "quotes": [
-        "Der Cyber-Hype lässt allerdings stets drei grundlegende Wahrheiten außer Acht: Einen Cyberkrieg gab es weder in der Vergangenheit noch gibt es ihn heute, und es ist auch unwahrscheinlich, dass er künftig ausbricht. Und so hat die Cyber-Ära bisher auch kein neues Zeitalter gewaltsamer Konflikte eingeläutet, sondern ist praktisch vom genau entgegengesetzten Trend gekennzeichnet – dem computergesteuerten Angriff auf politische Gewalt. Cyberattacken verstärken politische Gewalt nicht, sondern verringern sie eher – denn sie erleichtern Staaten, Gruppierungen und Personen zwei Arten von Aggression, die nicht in Kriege eskalieren: Sabotage und Spionage. […] Was gilt als Krieg? Nach wie vor gibt Carl von Clausewitz, preußischer Militärtheoretiker des 19. Jahrhunderts, die treffendste Antwort auf diese Frage. Er identifizierte drei Hauptkriterien, die eine Aggressions- oder Verteidigungsoperation erfüllen muss, damit sie als kriegerischer Akt definiert werden kann: Erstens sind alle kriegerischen Handlungen von Gewalt oder potenzieller Gewalt gekennzeichnet. Zweitens sind kriegerische Handlungen Mittel zum Zweck: Physische Gewalt oder die Androhung von Gewalt sind Mittel, mit denen sich der Angreifer den Feind gefügig machen will. Und drittens muss ein Angriff im Sinne einer kriegerischen Handlung politische Ziele oder Zwecke verfolgen. Aus diesem Grund müssen kriegerische Handlungen während einer Konfrontation einer bestimmten Seite zuzuordnen sein. Bisher aber hat keine Cyberattacke alle drei Kriterien erfüllt, die meisten nicht einmal eines."
+        "Der Cyber-Hype lässt allerdings stets drei grundlegende Wahrheiten außer Acht: Einen Cyberkrieg gab es weder in der Vergangenheit noch gibt es ihn heute, und es ist auch unwahrscheinlich, dass er künftig ausbricht. Und so hat die Cyber-Ära bisher auch kein neues Zeitalter gewaltsamer Konflikte eingeläutet, sondern ist praktisch vom genau entgegengesetzten Trend gekennzeichnet – dem computergesteuerten Angriff auf politische Gewalt."
       ]
     }
   ]

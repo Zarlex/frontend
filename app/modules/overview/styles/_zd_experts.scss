@@ -17,16 +17,16 @@
         display: none;
         color: $zdBlack;
         padding: 10px;
-        width: 90%;
+        width: 105%;
         line-height: 12pt;
 
         h4{
-          font-size: 20px;
+          font-size: 13pt;
           margin: 0 0 5px 0;
           line-height: 20pt;
         }
         span{
-          font-size: 14px;
+          font-size: 9pt;
         }
       }
 
@@ -47,21 +47,23 @@
   }
 
   .quote-holder{
-    height: 300px;
-    overflow: scroll;
+    height: 350px;
     padding: 0 200px 40px 200px;
     background: $expert-highlight-color;
+    margin: 0;
 
     cite{
       color: $zdBlack !important;
-      font-size: 35px;
-      line-height: 48px;
+      font-size: 22pt;
+      line-height: 26,4pt;
+      font-style: normal;
+      font-family: "Apercu Regular";
     }
   }
 
   .nav-btn{
     position: absolute;
-    bottom: 30%;
+    bottom: 35%;
     font-size: 90px;
 
     &.next-btn{
