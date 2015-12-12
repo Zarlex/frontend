@@ -121,6 +121,35 @@ body {
       }
     }
 
+    .menu_vw{
+      color: $zdGreen25;
+    
+    }
+    .menu_vw:hover{
+      opacity: 0.5;
+    }
+
+    .menu_ri{
+      color: $zdGreen50;
+      }
+    .menu_ri:hover{
+      opacity: 0.5;
+    }
+
+    .menu_ca{
+      color: $zdGreen75;
+    }
+    .menu_ca:hover{
+      opacity: 0.5;
+    }
+
+    .menu_pt{
+      color: $zdGreen100;
+    }
+    .menu_pt:hover{
+      opacity: 0.5;
+    }
+
     .menu-content {
       position: absolute;
       color: white;
@@ -133,8 +162,12 @@ body {
       ul {
         display: flex;
         flex-direction: column;
-        font-size: 35pt;
+        font-size: 25pt;
+        line-height: 40pt;
         text-transform: uppercase;
+        font-family: "Apercu Regular";
+        font-style: normal;
+        font-weight: normal;
       }
 
       //** ANIMATION START **/

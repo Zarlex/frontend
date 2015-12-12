@@ -10,6 +10,7 @@
     h3 {
       text-transform: uppercase;
       font-size: 35px;
+      font-family: "Apercu Regular";
     }
 
     > p {
@@ -27,6 +28,7 @@
       font-size: 20pt;
       line-height: 26.4pt;
 
+
       &:before {
         content: "»"
       }
@@ -37,7 +39,8 @@
 
       ~ .author {
         &:before {
-          content: ""
+           content:'\A';
+          white-space: pre;
         }
       }
     }
@@ -46,18 +49,79 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      margin-left: -150px;
       justify-content: center;
+      width: 120%;
 
       .overlay-btn{
         text-align: center;
-        margin: 20px;
+        margin: 0px;
         text-transform: uppercase;
-        max-width: 200px;
+        width: 350px;
+        font-family: "Apercu Bold", Calibri, Roboto, sans-serif;
+        font-size: 12pt;
 
         span{
           font-size: 140px;
+          color: $zdGreen100;
         }
       }
     }
   }
+
+
+    .collum1-btns-holder{
+      display: flex;
+      position: absolute;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-left: 68%;
+      margin-top: 10%;
+      justify-content: center;
+      width: 23%;
+
+      .overlay-btn{
+        text-align: center;
+        margin: 0px;
+        text-transform: uppercase;
+        width: 350px;
+        font-family: "Apercu Bold", Calibri, Roboto, sans-serif;
+        font-size: 12pt;
+
+        span{
+          font-size: 80px;
+          color: $zdGreen100;
+        }
+      }
+    }
+  
+
+    .collum2-btns-holder{
+      display: flex;
+      position: absolute;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-left: 76%;
+      margin-top: 10%;
+      justify-content: center;
+      width: 23%;
+
+      .overlay-btn{
+        text-align: center;
+        margin: 0px;
+        text-transform: uppercase;
+        width: 350px;
+        font-family: "Apercu Bold", Calibri, Roboto, sans-serif;
+        font-size: 12pt;
+
+        span{
+          font-size: 80px;
+          color: $zdGreen100;
+        }
+      }
+    }
+
+
+
 }
+

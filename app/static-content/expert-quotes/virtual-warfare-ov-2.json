@@ -3,7 +3,7 @@
     {
       "id": "K_SAALBACH",
       "name": "K. Saalbach",
-      "description": "Professor für Politikwissenschaften Universität Osnabrück",
+      "description": "Professor für Politikwissenschaften Osnabrück",
       "quotes": [
         "Zudem suchte Stuxnet auch nach weiteren geeigneten Systemen zu Infektion unter  Ausnutzung der sogenannten Autorun-Funktion von Windows. Stuxnet löscht sich nach einer bestimmten Zahl von erfolgreichen Infektionen selbst."
       ]
@@ -11,7 +11,7 @@
     {
       "id": "SANDRO_GAYCKEN",
       "name": "Sandro Gaycken",
-      "description": "US Sicherheitsexperte und Politikwissenschaftler",
+      "description": "Sicherheitsforscher FU Berlin",
       "quotes": [
         "Dagegen kann angeführt werden, dass Hackerangriffe eine Reihe taktischer Optionen bieten, die eine Bombe nicht bietet. Man kann es so aussehen lassen wie ein technisches Problem, einen Unfall oder wie einen Angriff einer dritten Macht, man kann den Zusammenbruch sehr genau steuern, man kann die Anlage danach wieder benutzen, Cyberangriffe können absolut unblutig sein und so für weniger Eskalation sorgen, und man ist vor allem nicht so leicht identifizierbar."
         "Das ist das besondere Problem der „Security of Security“. Normalerweise erwartet man von Sicherheitsprodukten, dass sie das vermeiden, was ihre Schutzgüter zu Schutzgütern macht: eigene Sicherheitslücken. Die Vergangenheit hat jedoch immer wieder deutlich gemacht, dass Sicherheitsprodukte genauso schlampig entwickelt werden wie alle andere Software. Sie haben also auch die gleichen Fehler und sind genauso angreifbar. Nur dass sie eigentlich Angriffsschutz bieten sollen und viele in kritischen Bereichen eingesetzt werden."

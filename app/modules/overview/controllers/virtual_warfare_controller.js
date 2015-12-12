@@ -21,6 +21,8 @@ angular.module('ZeroDay.Overview')
 
     this.WarfareIcons = WarfareIcons;
     this.expertQuotes = expertQuotes;
+
+    this.dokuModal = new vwInvisibleModal();
   })
 
   .constant('VirtualWarfareControllerResolver', {

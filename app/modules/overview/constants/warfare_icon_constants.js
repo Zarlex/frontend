@@ -15,6 +15,8 @@ angular.module('ZeroDay.Overview')
     SPYGLASS: 'icon-Spionage',
     GHOST: 'icon-UnsichtbareAngriffe',
     PIGGYBANK: 'icon-WirtschaftUndFinanzmarkt',
+    DOKU: 'icon-Dokument',
+    WEB: 'icon-Website',
     GUY_F: 'icon-Attributationsproblem_hover',
     MONEYBAG_F: 'icon-GeringesRiskoKleinesGeld_hover',
     BRAIN_F: 'icon-HoheHackerkompetenz_hover',
@@ -26,6 +28,8 @@ angular.module('ZeroDay.Overview')
     SPYGLASS_F: 'icon-Spionage_hover',
     GHOST_F: 'icon-UnsichtbareAngriffe_hover',
     PIGGYBANK_F: 'icon-WirtschaftUndFinanzmarkt_hover',
+    DOKU_F: 'icon-Dokument_hover',
+    WEB_F: 'icon-Website_hover',
     getIconById: function(id){
         if(this[id]){
             return this[id];
