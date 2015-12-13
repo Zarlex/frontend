@@ -6,8 +6,8 @@
 @import "transitions/current_attacks_transitions";
 @import "transitions/potential_threads_transitions";
 
-
-&.overview {
+&.overview,
+&.start {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -23,7 +23,6 @@
 
     .entry {
       min-height: 100%;
-      transition: width 1s ease;
       white-space: nowrap;
       overflow: hidden;
 
@@ -31,37 +30,37 @@
       flex-direction: column;
       flex-basis: 25%;
 
-      @include single-transition(flex-basis, 1s, ease);
+      @include transition(flex-basis 1s ease, background-color 1s ease);
 
       &.warfare {
-        background: $warfare-color;
+        background-color: $warfare-color;
 
-        .bg-pattern{
-          @include grid-bg(white,$warfare-color);
+        .bg-pattern {
+          @include grid-bg(white, $warfare-color);
         }
       }
 
       &.impacts {
-        background: $impact-color;
+        background-color: $impact-color;
 
-        .bg-pattern{
-          @include grid-bg(white,$impact-color);
+        .bg-pattern {
+          @include grid-bg(white, $impact-color);
         }
       }
 
       &.attacks {
-        background: $attacks-color;
+        background-color: $attacks-color;
 
-        .bg-pattern{
-          @include grid-bg(white,$attacks-color);
+        .bg-pattern {
+          @include grid-bg(white, $attacks-color);
         }
       }
 
       &.threads {
-        background: $threads-color;
+        background-color: $threads-color;
 
-        .bg-pattern{
-          @include grid-bg(white,$threads-color);
+        .bg-pattern {
+          @include grid-bg(white, $threads-color);
         }
       }
 
@@ -91,25 +90,26 @@
             margin: 0;
             font-size: 20pt;
             text-transform: uppercase;
-            font-family:"Apercu Regular", Calibri, Roboto, sans-serif;
+            font-family: "Apercu Regular", Calibri, Roboto, sans-serif;
           }
 
           p {
             opacity: 0;
             font-size: 12pt;
-            font-family:"Apercu Regular", Calibri, Roboto, sans-serif;
+            font-family: "Apercu Regular", Calibri, Roboto, sans-serif;
             @include single-transition(opacity, 1s, ease);
           }
 
         }
       }
 
-      .bg-pattern{
+      .bg-pattern {
         position: fixed;
         width: 100%;
         height: 100%;
         top: 0px;
         opacity: 0;
+        @include single-transition(opacity, 1s, ease);
       }
 
       @import "content";
@@ -120,62 +120,29 @@
         .btn-nav {
           width: 50%;
           margin-top: 10%;
-          margin-right: -4px;
+          margin-right: -4%;
           padding: 30px;
           box-sizing: border-box;
           color: $zdGray;
           text-transform: uppercase;
-          &:nth-child(1){
+          &:nth-child(1) {
             text-align: left;
           }
-          &:nth-child(2){
+          &:nth-child(2) {
             text-align: right;
           }
         }
-      }
 
-      .button-holder-vw {
-        position: relative;
-        z-index: 1;
-        .btn-nav {
-          width: 100%;
-          margin-top: 10%;
-          margin-right: -4px;
-          padding: 30px;
-          box-sizing: border-box;
-          color: $zdGray;
-          text-transform: uppercase;
-          &:nth-child(1){
-            text-align: right;
-          }
-          &:nth-child(2){
-            text-align: right;
+        &.single-btn {
+          .btn-nav {
+            width: 100%;
+
+            &.right{
+              text-align: right;
+            }
           }
         }
       }
-
-
-      .button-holder-pt {
-        position: relative;
-        z-index: 1;
-        .btn-nav {
-          width: 100%;
-          margin-top: 10%;
-          margin-right: -4px;
-          padding: 30px;
-          box-sizing: border-box;
-          color: $zdGray;
-          text-transform: uppercase;
-          &:nth-child(1){
-            text-align: left;
-          }
-          &:nth-child(2){
-            text-align: right;
-          }
-        }
-      }
-
-
 
       &:hover {
         flex-basis: 75%;
@@ -226,7 +193,7 @@
         z-index: 1;
         position: relative;
 
-        &:hover{
+        &:hover {
           flex-basis: 4%;
         }
       }
@@ -268,7 +235,7 @@
     }
   }
 
-  .pull-out{
+  .pull-out {
     margin: 0 -17%;
   }
 }
@@ -286,36 +253,36 @@
   }
 }
 
-.spy-holder{
-  &:after{
+.spy-holder {
+  &:after {
     content: '';
     clear: both;
   }
   .calendar,
-  .content{
+  .content {
     float: left;
   }
 
-  .calendar{
+  .calendar {
     width: 20%;
     position: relative;
     margin-top: 40px;
 
-    li > ul{
+    li > ul {
       position: absolute;
       top: 0;
       left: 80px;
       display: none;
     }
 
-    li a{
+    li a {
       text-decoration: none;
       color: $zdBlack;
     }
 
-    li.active{
+    li.active {
 
-      > a{
+      > a {
         color: #40ff8d;
       }
 
@@ -326,15 +293,15 @@
     }
   }
 
-  .content{
+  .content {
     width: 80%;
   }
 
-  .calendar.affix{
+  .calendar.affix {
     position: fixed;
     top: 10px;
 
-    ~ .content{
+    ~ .content {
       margin-left: 20%;
     }
   }
