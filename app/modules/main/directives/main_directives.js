@@ -41,7 +41,7 @@ angular.module('ZeroDay')
         });
 
         $rootScope.$on('$routeChangeSuccess', function () {
-          processFns.forEach(function(processFn){
+          processFns.forEach(function (processFn) {
             processFn();
           });
           processFns = [];
@@ -54,6 +54,10 @@ angular.module('ZeroDay')
               $route.current.animationClasses.from.forEach(function (animation) {
                 if (animation.route && prevPage.match(animation.route)) {
                   el.addClass(animation.classes);
+
+                  if (animation.process && typeof animation.process === 'function') {
+                      animation.process.call(this, el, event);
+                  }
                 }
               });
             }
@@ -71,7 +75,7 @@ angular.module('ZeroDay')
       },
       link: function (scope, el) {
         var setBackgroundPosition = function (posY) {
-          if(scope.noOverlay){
+          if (scope.noOverlay) {
             el.css('background-position', '0 ' + posY + ', 0 0');
           } else {
             el.css('background-position', '0 0, 0 ' + posY);
@@ -115,23 +119,23 @@ angular.module('ZeroDay')
     };
   })
 
-  .directive('zdFadeInOnScroll', function(){
+  .directive('zdFadeInOnScroll', function () {
     return {
-      link: function(scope, el, attrs){
+      link: function (scope, el, attrs) {
         var max;
 
-        if(attrs.maxOpacity) {
-           max = parseInt(attrs.maxOpacity, 10);
+        if (attrs.maxOpacity) {
+          max = parseInt(attrs.maxOpacity, 10);
         }
 
         var throttled = _.throttle(function () {
           var relativeScrollPos = getRelativeScrollPos('Y');
-          if(max){
-            var opaVal = (relativeScrollPos/100 * max);
-            opaVal = opaVal > max? max: opaVal;
-            el.css('opacity', opaVal/100);
+          if (max) {
+            var opaVal = (relativeScrollPos / 100 * max);
+            opaVal = opaVal > max ? max : opaVal;
+            el.css('opacity', opaVal / 100);
           } else {
-            el.css('opacity', relativeScrollPos/100);
+            el.css('opacity', relativeScrollPos / 100);
           }
         }, 10);
 
@@ -247,4 +251,54 @@ angular.module('ZeroDay')
         angular.element(window).resize(throtteledFn);
       }
     };
+  })
+
+  .directive('zdGoToPageOnPageEnd', function ($location, $timeout, Icons) {
+    return {
+      scope: {
+        path: '@zdGoToPageOnPageEnd'
+      },
+      template: '<div class="zd-go-to-page-on-page-end" ng-click="goToPath()"><span class="{{Icons.getIconById(\'ARROW_DOWN\')}}"></span></div>',
+      link: function (scope, el, attrs) {
+
+        var bottomDelta = 0;
+
+        scope.Icons = Icons;
+
+        scope.goToPath = function(){
+          $location.path(scope.path);
+        };
+
+        var bottomIsReached = function(){
+          var scrollTop = angular.element(window).scrollTop(),
+              windowHeight = angular.element(window).height(),
+              documentHeight = angular.element(document).height();
+
+          return scrollTop + windowHeight === documentHeight;
+        };
+
+        var wheelHandler = function (event) {
+          if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+            bottomDelta = 0;
+          }
+          else if (bottomIsReached() && scope.path) {
+            if(bottomDelta < event.originalEvent.wheelDelta*10*-1){
+              bottomDelta += event.originalEvent.wheelDelta*-1;
+            } else {
+              angular.element(window).off('mousewheel DOMMouseScroll', wheelHandler);
+              $timeout( function(){
+                scope.goToPath();
+              });
+            }
+          }
+        };
+
+        angular.element(window).on('mousewheel DOMMouseScroll', wheelHandler);
+
+        scope.$on('$destroy', function(){
+          angular.element(window).off('mousewheel DOMMouseScroll', wheelHandler);
+        });
+      }
+    };
   });
+
