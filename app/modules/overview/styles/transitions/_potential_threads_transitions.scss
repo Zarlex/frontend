@@ -44,7 +44,8 @@
   .entry.threads{
     background: $threads-color !important;
 
-    .bg-pattern{
+    .bg-pattern,
+    .zd-navigator{
       opacity: 0 !important;
     }
   }
