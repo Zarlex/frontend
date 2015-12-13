@@ -1,3 +1,4 @@
+
 /* Current Attacks -> Overview */
 &.overview.current-attacks.index-enter.ng-leave { }
 
@@ -38,6 +39,14 @@
   .entry.attacks {
     flex-basis: 2%;
   }
+
+  .entry.attacks{
+    background: $attacks-color !important;
+
+    .bg-pattern{
+      opacity: 0 !important;
+    }
+  }
 }
 
 /* Current Attacks -> Potential Threads */
@@ -63,5 +72,11 @@
 
   .entry.attacks {
     flex-basis: 2%;
+
+    background: $attacks-color !important;
+
+    .bg-pattern{
+      opacity: 0 !important;
+    }
   }
 }

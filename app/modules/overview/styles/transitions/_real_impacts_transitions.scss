@@ -36,6 +36,12 @@
 
   .entry.impacts {
     flex-basis: 2%;
+
+    background: $impact-color !important;
+
+    .bg-pattern{
+      opacity: 0 !important;
+    }
   }
 }
 
@@ -63,5 +69,13 @@
   .entry.impacts,
   .entry.threads{
     flex-basis: 2%;
+  }
+
+  .entry.impacts{
+    background: $impact-color !important;
+
+    .bg-pattern{
+      opacity: 0 !important;
+    }
   }
 }

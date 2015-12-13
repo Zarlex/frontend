@@ -27,6 +27,11 @@
 
   .entry.warfare {
     flex-basis: 2%;
+    background: $warfare-color !important;
+
+    .bg-pattern{
+     opacity: 0 !important;
+    }
   }
 
   .entry.impacts {

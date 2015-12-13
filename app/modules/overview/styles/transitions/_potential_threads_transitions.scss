@@ -40,4 +40,12 @@
   .entry.threads{
     flex-basis: 2%;
   }
+
+  .entry.threads{
+    background: $threads-color !important;
+
+    .bg-pattern{
+      opacity: 0 !important;
+    }
+  }
 }
