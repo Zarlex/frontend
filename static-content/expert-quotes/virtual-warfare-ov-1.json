@@ -1,0 +1,28 @@
+{
+  "experts": [
+        {
+      "id": "MALTE_HERWIG",
+      "name": "Malte Herwig",
+      "description": "Stern.de",
+      "quotes": [
+        "Sie kommen heimlich und bleiben manchmal jahrelang, ohne entdeckt zu werden. Ein Mausklick genügt, um sie zu aktivieren und die Kontrolle zu übernehmen. Wanzen, Würmer, Viren - die Waffen im Zeitalter der digitalen Kriegsführung."
+      ]
+    },
+    {
+      "id": "SANDRO_GAYCKEN",
+      "name": "Sandro Gaycken",
+      "description": "Sicherheitsforscher FU Berlin",
+      "quotes": [
+        "Im Lauf des Buches sind hoffentlich einige Merkmale des Cyberwar deutlich geworden. Vor allem sollte klar geworden sein, dass dieser Krieg nicht nur effizient, sondern auch besonders leise ist."
+      ]
+    },
+    {
+      "id": "PETER_SINGER",
+      "name": "P.W. Singer",
+      "description": "US-Sicherheitsexperte",
+      "quotes": [
+        "If you realy want to know what a cyberattack is, you first have to distinguish it from traditional attacks. Instead of using kinetic force (a fist, a sword, a bomb, etc.), they use ditital means, a computer action of some sort. This is significant: a cyberattack is not constrained by the usual physics of traditional attacks. In cyberspace, an attack can literally move at the speed of light, unlimited by geography and the political boundaries. Being delinked from physics also means it can be in multiple places at the same time, meaning the same attack can hit multiple targets at once. The second way a cyberattack differ is in the target. Instead of causing direct physical damage, a cyberattack always first targets another computer and the information within it. The intended result of the attack may be to damage something physical, but that damage always first result from an incident in the digital realm."
+      ]
+    }
+  ]
+}
