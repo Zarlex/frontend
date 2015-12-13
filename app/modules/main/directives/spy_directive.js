@@ -25,10 +25,6 @@ angular.module('ZeroDay')
         bodyEl.scrollspy({
           target: '#'+id
         });
-
-        bodyEl.data()['bs.scrollspy'].activate = function () {
-          $bootstrapActivate.apply(bodyEl.data()['bs.scrollspy'], arguments);
-        };
       }
     };
   })
@@ -61,7 +57,7 @@ angular.module('ZeroDay')
 // This is the orginal bootstrap activate implementation with the only
 // modification that it just removes the active class of the parent nav el and
 // NOT from ALL parent elements!
-var $bootstrapActivate = function (target) {
+$.fn.scrollspy.Constructor.prototype.activate = function (target) {
   this.activeTarget = target
 
   $(this.selector)
