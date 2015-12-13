@@ -12,7 +12,7 @@ angular.module('ZeroDay.Overview')
         url: '@',
         logoUrl: '@',
         logoFallbackUrl: '@',
-        title: '@',
+        zdTitle: '@',
         copy: '@',
         holderWidth: '@'
       },

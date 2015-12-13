@@ -56,7 +56,7 @@ angular.module('ZeroDay')
                   el.addClass(animation.classes);
 
                   if (animation.process && typeof animation.process === 'function') {
-                      animation.process.call(this, el, event);
+                    animation.process.call(this, el, event);
                   }
                 }
               });
@@ -91,6 +91,9 @@ angular.module('ZeroDay')
         }, 10);
 
         angular.element(window).on('scroll', throttled);
+        scope.$on('$destroy', function(){
+          angular.element(window).off('scroll', throttled);
+        });
       }
     };
   })
@@ -115,6 +118,9 @@ angular.module('ZeroDay')
         }, 10);
 
         angular.element(window).on('scroll', throttled);
+        scope.$on('$destroy', function(){
+          angular.element(window).off('scroll', throttled);
+        });
       }
     };
   })
@@ -140,6 +146,9 @@ angular.module('ZeroDay')
         }, 10);
 
         angular.element(window).on('scroll', throttled);
+        scope.$on('$destroy', function(){
+          angular.element(window).off('scroll', throttled);
+        });
       }
     }
   })
@@ -211,6 +220,9 @@ angular.module('ZeroDay')
         _rgbaColor = getRgbFromHex(color);
         angular.element(window).on('scroll', throttled);
         el.on('scroll', throttled);
+        scope.$on('$destroy', function(){
+          angular.element(window).off('scroll', throttled);
+        });
       }
     };
   })
@@ -253,6 +265,51 @@ angular.module('ZeroDay')
     };
   })
 
+  .directive('zdScrollBottom', function () {
+    return {
+      link: function (scope, el, attrs) {
+        var scrollBottom = function (ev) {
+          ev.preventDefault();
+          angular.element(window).scrollTo('100%',500);
+        };
+        el.on('click', scrollBottom)
+      }
+    };
+  })
+
+  .directive('zdNavigator', function($timeout){
+    return {
+      template: '<div class="zd-navigator {{Icons.getIconById(\'ARROW_UP_SMALL\')}}" ng-class="{up: hasScrolled, down:!hasScrolled}" ng-click="navigate()"></div>',
+      link: function(scope){
+        var windowEl = angular.element(window);
+
+        var setScrolledDown = function(){
+          $timeout(function(){
+            scope.hasScrolled = windowEl.scrollTop()> (windowEl.height() / 2);
+          });
+        };
+
+        scope.hasScrolled = false;
+
+        scope.navigate = function(){
+          if(scope.hasScrolled){
+            angular.element(window).scrollTo(0,500);
+          } else {
+            angular.element(window).scrollTo(windowEl.height(), 900);
+          }
+        };
+
+        var throtteledFn = _.throttle(setScrolledDown, 200);
+
+        windowEl.on('scroll', throtteledFn);
+
+        scope.$on('$destroy', function(){
+          windowEl.off('scroll', throtteledFn);
+        });
+      }
+    }
+  })
+
   .directive('zdGoToPageOnPageEnd', function ($location, $timeout, Icons) {
     return {
       scope: {
@@ -265,14 +322,14 @@ angular.module('ZeroDay')
 
         scope.Icons = Icons;
 
-        scope.goToPath = function(){
+        scope.goToPath = function () {
           $location.path(scope.path);
         };
 
-        var bottomIsReached = function(){
+        var bottomIsReached = function () {
           var scrollTop = angular.element(window).scrollTop(),
-              windowHeight = angular.element(window).height(),
-              documentHeight = angular.element(document).height();
+            windowHeight = angular.element(window).height(),
+            documentHeight = angular.element(document).height();
 
           return scrollTop + windowHeight === documentHeight;
         };
@@ -282,11 +339,11 @@ angular.module('ZeroDay')
             bottomDelta = 0;
           }
           else if (bottomIsReached() && scope.path) {
-            if(bottomDelta < event.originalEvent.wheelDelta*10*-1){
-              bottomDelta += event.originalEvent.wheelDelta*-1;
+            if (bottomDelta < event.originalEvent.wheelDelta * 10 * -1) {
+              bottomDelta += event.originalEvent.wheelDelta * -1;
             } else {
               angular.element(window).off('mousewheel DOMMouseScroll', wheelHandler);
-              $timeout( function(){
+              $timeout(function () {
                 scope.goToPath();
               });
             }
@@ -295,7 +352,7 @@ angular.module('ZeroDay')
 
         angular.element(window).on('mousewheel DOMMouseScroll', wheelHandler);
 
-        scope.$on('$destroy', function(){
+        scope.$on('$destroy', function () {
           angular.element(window).off('mousewheel DOMMouseScroll', wheelHandler);
         });
       }

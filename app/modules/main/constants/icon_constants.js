@@ -8,7 +8,7 @@ angular.module('ZeroDay')
     ARROW_RIGHT: 'icon-Pfeil_experten',
     ARROW_LEFT: 'icon-Pfeil_experten_left',
     ARROW_DOWN: 'icon-Pfeil_experten_down',
-    ARROW_TOP: 'icon-Pfeil',
+    ARROW_UP_SMALL: 'icon-Pfeil',
     getIconById: function (id) {
       if (this[id]) {
         return this[id];

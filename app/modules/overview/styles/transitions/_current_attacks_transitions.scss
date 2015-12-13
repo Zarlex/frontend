@@ -43,7 +43,8 @@
   .entry.attacks{
     background: $attacks-color !important;
 
-    .bg-pattern{
+    .bg-pattern,
+    .zd-navigator{
       opacity: 0 !important;
     }
   }
@@ -75,7 +76,8 @@
 
     background: $attacks-color !important;
 
-    .bg-pattern{
+    .bg-pattern,
+    .zd-navigator{
       opacity: 0 !important;
     }
   }

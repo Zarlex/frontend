@@ -39,7 +39,8 @@
 
     background: $impact-color !important;
 
-    .bg-pattern{
+    .bg-pattern,
+    .zd-navigator{
       opacity: 0 !important;
     }
   }
@@ -74,7 +75,8 @@
   .entry.impacts{
     background: $impact-color !important;
 
-    .bg-pattern{
+    .bg-pattern,
+    .zd-navigator{
       opacity: 0 !important;
     }
   }

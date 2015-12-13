@@ -80,10 +80,10 @@
 
         .title {
           position: relative;
-          padding: 16px;
-          padding-left: 11%;
+          padding: 25px 16px 0 11%;
           flex-basis: 15%;
           transform: translateY(18px);
+          max-height: 50px;
           @include single-transition(transform, 1s, ease);
 
           h2, p {
@@ -116,7 +116,7 @@
 
       .button-holder {
         position: relative;
-        z-index: 1;
+        z-index: 9;
         .btn-nav {
           width: 50%;
           margin-top: 10%;
@@ -193,9 +193,25 @@
         z-index: 1;
         position: relative;
 
+        &:after{
+          content: attr(zd-title);
+          position: absolute;
+          top: 10%;
+          opacity: 0;
+          transform: rotate(-90deg);
+          @include transition(left 0.5s ease, opacity 1s ease);
+          left: 0;
+          display: block;
+        }
+
         &:hover {
           flex-basis: 4%;
+          &:after{
+            left: -35px;
+            opacity: 1;
+          }
         }
+
       }
     }
 

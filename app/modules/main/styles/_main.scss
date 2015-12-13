@@ -74,6 +74,19 @@ body {
     &.primary {
       background: $zdPrimary;
     }
+
+    &.border{
+      &.primary{
+        background: transparent;
+        border: 1px solid $zdPrimary;
+        color: $zdPrimary;
+
+        &:hover{
+          background: $zdPrimary;
+          color: white;
+        }
+      }
+    }
   }
 
   .zd-go-to-page-on-page-end{
@@ -221,6 +234,24 @@ body {
           }
         }
       }
+    }
+  }
+
+  .zd-navigator{
+    position: fixed;
+    bottom: 26px;
+    right: 46px;
+    font-size: 40px;
+    z-index: 9;
+    opacity: 1;
+    @include transition(transform 1s ease, opacity 0.5s ease);
+
+    &.down{
+      transform: rotate(180deg);
+    }
+
+    &.up{
+      transform: rotate(0deg);
     }
   }
 }
