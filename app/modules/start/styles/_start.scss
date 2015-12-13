@@ -1,3 +1,5 @@
+@import "start_transitions";
+
 &.start{
   .bg-pattern,
   .bg-overlay{
@@ -28,6 +30,7 @@
 
   .description-page{
     top: 100%;
+    flex-direction: column;
 
     .text-container{
       max-width: 600px;
@@ -35,6 +38,36 @@
       h2{
         text-align: center;
       }
+    }
+
+    .zd-go-to-page-on-page-end{
+      position: absolute;
+      bottom: 30px;
+      width: inherit;
+    }
+  }
+
+  .navigator{
+    position:fixed;
+    display: none;
+
+    .entry{
+      @include single-transition(transform, 1s, ease);
+    }
+
+    .entry.warfare{
+      transform: translateY(100%);
+    }
+    .entry.impacts{
+      transform: translateY(134%);
+    }
+
+    .entry.attacks{
+      transform: translateY(168%);
+    }
+
+    .entry.threads{
+      transform: translateY(200%);
     }
   }
 
