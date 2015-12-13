@@ -89,14 +89,14 @@
 
           h2, p {
             margin: 0;
-            font-size: 22px;
+            font-size: 20pt;
             text-transform: uppercase;
-            font-family:"Apercu Bold", Calibri, Roboto, sans-serif;
+            font-family:"Apercu Regular", Calibri, Roboto, sans-serif;
           }
 
           p {
             opacity: 0;
-            font-size: 15px;
+            font-size: 12pt;
             font-family:"Apercu Regular", Calibri, Roboto, sans-serif;
             @include single-transition(opacity, 1s, ease);
           }
@@ -119,10 +119,12 @@
         z-index: 1;
         .btn-nav {
           width: 50%;
+          margin-top: 10%;
           margin-right: -4px;
           padding: 30px;
           box-sizing: border-box;
-
+          color: $zdGray;
+          text-transform: uppercase;
           &:nth-child(1){
             text-align: left;
           }
@@ -131,6 +133,49 @@
           }
         }
       }
+
+      .button-holder-vw {
+        position: relative;
+        z-index: 1;
+        .btn-nav {
+          width: 100%;
+          margin-top: 10%;
+          margin-right: -4px;
+          padding: 30px;
+          box-sizing: border-box;
+          color: $zdGray;
+          text-transform: uppercase;
+          &:nth-child(1){
+            text-align: right;
+          }
+          &:nth-child(2){
+            text-align: right;
+          }
+        }
+      }
+
+
+      .button-holder-pt {
+        position: relative;
+        z-index: 1;
+        .btn-nav {
+          width: 100%;
+          margin-top: 10%;
+          margin-right: -4px;
+          padding: 30px;
+          box-sizing: border-box;
+          color: $zdGray;
+          text-transform: uppercase;
+          &:nth-child(1){
+            text-align: left;
+          }
+          &:nth-child(2){
+            text-align: right;
+          }
+        }
+      }
+
+
 
       &:hover {
         flex-basis: 75%;
