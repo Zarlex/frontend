@@ -80,10 +80,10 @@
 
         .title {
           position: relative;
-          padding: 16px;
-          padding-left: 11%;
+          padding: 0 16px 0 11%;
           flex-basis: 15%;
           transform: translateY(18px);
+          max-height: 50px;
           @include single-transition(transform, 1s, ease);
 
           h2, p {
@@ -197,8 +197,9 @@
           content: attr(zd-title);
           position: absolute;
           top: 10%;
+          opacity: 0;
           transform: rotate(-90deg);
-          @include single-transition(left, 0.5s, ease);
+          @include transition(left 0.5s ease, opacity 1s ease);
           left: 0;
           display: block;
         }
@@ -207,6 +208,7 @@
           flex-basis: 4%;
           &:after{
             left: -35px;
+            opacity: 1;
           }
         }
 
