@@ -4,6 +4,7 @@
 angular.module('ZeroDay')
 
   .constant('Icons', {
+    LOGO_PRIMARY: 'icon-Logo_gross',
     ARROW_RIGHT: 'icon-Pfeil_experten',
     ARROW_LEFT: 'icon-Pfeil_experten_left',
     ARROW_DOWN: 'icon-Pfeil_experten_down',

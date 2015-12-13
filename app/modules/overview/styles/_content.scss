@@ -28,7 +28,6 @@
       font-size: 20pt;
       line-height: 26.4pt;
 
-
       &:before {
         content: "»"
       }
@@ -39,56 +38,49 @@
 
       ~ .author {
         &:before {
-           content:'\A';
+          content: '\A';
           white-space: pre;
         }
       }
     }
 
+    .timeline {
+      margin: 15% 8% 35px 0%;
+      font-size: 20px;
+      h1 {
+        text-transform: uppercase;
+        font-size: 15pt;
+        font-family: "Apercu Mono Regular";
+        color: $zdGreen100;
+        line-height: 8pt;
+      }
 
+      h3 {
+        text-transform: uppercase;
+        font-size: 15pt;
+        font-family: "Apercu Regular";
+        line-height: 10pt;
+      }
 
-  article-tl {
-    margin: 15% 8% 35px 0%;
-    font-size: 20px;
-    h1 {
-      text-transform: uppercase;
-      font-size: 15pt;
-      font-family: "Apercu Mono Regular";
-      color: $zdGreen100;
-      line-height: 8pt;
+      h4 {
+        text-transform: uppercase;
+        padding-left: 10%;
+        padding-top: 1%;
+        font-size: 20pt;
+        font-family: "Apercu Regular";
+        line-height: 5pt;
+      }
+
+      > p {
+        padding-left: 10%;
+        width: 80%;
+        margin-top: 0;
+
+      }
+
     }
 
-    h3 {
-      text-transform: uppercase;
-      font-size: 15pt;
-      font-family: "Apercu Regular";
-      line-height: 10pt;
-    }
-
-
-    h4 {
-      text-transform: uppercase;
-      padding-left: 10%;
-      padding-top: 1%;
-      font-size: 20pt;
-      font-family: "Apercu Regular";
-      line-height: 5pt;
-    }
-
-    > p {
-      padding-left: 10%;
-      width: 80%;
-      margin-top: 0;
-
-    }
-
- 
-  }
-
-
-
-
-    .ovlerlay-btns-holder{
+    .ovlerlay-btns-holder {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -96,7 +88,7 @@
       justify-content: center;
       width: 120%;
 
-      .overlay-btn{
+      .overlay-btn {
         text-align: center;
         margin: 0px;
         text-transform: uppercase;
@@ -104,7 +96,7 @@
         font-family: "Apercu Bold", Calibri, Roboto, sans-serif;
         font-size: 12pt;
 
-        span{
+        span {
           font-size: 140px;
           color: $zdGreen100;
         }
@@ -112,59 +104,62 @@
     }
   }
 
+  hr{
+    border: none;
+    height: 131px;
+    margin: 0;
+    @include grid-bg($zdPrimary, transparent);
+  }
 
-    .collum1-btns-holder{
-      display: flex;
-      position: absolute;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-left: 68%;
-      margin-top: 10%;
-      justify-content: center;
-      width: 23%;
+  .collum1-btns-holder {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 68%;
+    margin-top: 10%;
+    justify-content: center;
+    width: 23%;
 
-      .overlay-btn{
-        text-align: center;
-        margin: 0px;
-        text-transform: uppercase;
-        width: 350px;
-        font-family: "Apercu Bold", Calibri, Roboto, sans-serif;
-        font-size: 12pt;
+    .overlay-btn {
+      text-align: center;
+      margin: 0px;
+      text-transform: uppercase;
+      width: 350px;
+      font-family: "Apercu Bold", Calibri, Roboto, sans-serif;
+      font-size: 12pt;
 
-        span{
-          font-size: 80px;
-          color: $zdGreen100;
-        }
+      span {
+        font-size: 80px;
+        color: $zdGreen100;
       }
     }
-  
+  }
 
-    .collum2-btns-holder{
-      display: flex;
-      position: absolute;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-left: 76%;
-      margin-top: 10%;
-      justify-content: center;
-      width: 23%;
+  .collum2-btns-holder {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 76%;
+    margin-top: 10%;
+    justify-content: center;
+    width: 23%;
 
-      .overlay-btn{
-        text-align: center;
-        margin: 0px;
-        text-transform: uppercase;
-        width: 350px;
-        font-family: "Apercu Bold", Calibri, Roboto, sans-serif;
-        font-size: 12pt;
+    .overlay-btn {
+      text-align: center;
+      margin: 0px;
+      text-transform: uppercase;
+      width: 350px;
+      font-family: "Apercu Bold", Calibri, Roboto, sans-serif;
+      font-size: 12pt;
 
-        span{
-          font-size: 80px;
-          color: $zdGreen100;
-        }
+      span {
+        font-size: 80px;
+        color: $zdGreen100;
       }
     }
-
-
+  }
 
 }
 

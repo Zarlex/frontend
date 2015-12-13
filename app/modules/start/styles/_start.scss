@@ -20,11 +20,11 @@
   }
 
   .intro-page{
-
+    justify-content: center;
     .logo-container{
-      width: 460px;
-      height: 120px;
-      margin: auto;
+      .icon{
+        font-size: 50vw;
+      }
     }
   }
 
