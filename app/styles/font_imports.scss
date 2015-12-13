@@ -20,6 +20,7 @@ $zd-font-path-prefix: "../fonts/zero-day";
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  display: inline-block;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
@@ -31,4 +32,9 @@ $zd-font-path-prefix: "../fonts/zero-day";
 .icon-Pfeil_experten_left{
   @extend .icon-Pfeil_experten;
   transform: rotate(180deg);
+}
+
+.icon-Pfeil_experten_down{
+  @extend .icon-Pfeil_experten;
+  transform: rotate(90deg);
 }
