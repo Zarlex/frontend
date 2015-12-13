@@ -6,6 +6,7 @@ angular.module('ZeroDay')
   .constant('Icons', {
     ARROW_RIGHT: 'icon-Pfeil_experten',
     ARROW_LEFT: 'icon-Pfeil_experten_left',
+    ARROW_DOWN: 'icon-Pfeil_experten_down',
     ARROW_TOP: 'icon-Pfeil',
     getIconById: function (id) {
       if (this[id]) {
