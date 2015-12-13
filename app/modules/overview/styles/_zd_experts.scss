@@ -58,6 +58,15 @@
       line-height: 26,4pt;
       font-style: normal;
       font-family: "Apercu Regular";
+    
+       &:before {
+          content: "»"
+        }
+
+      &:after {
+        content: "«"
+        }
+
     }
   }
 
