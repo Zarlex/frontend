@@ -14,7 +14,15 @@ angular.module('ZeroDay.Start', ['ZeroDay'])
         controller: 'StartController',
         controllerAs: 'startCtrl',
         resolve: $injector.get('StartControllerResolver'),
-        cssClasses: 'start'
+        cssClasses: 'start',
+        animationClasses: {
+          to: [
+            {
+              route: '/overview',
+              classes: 'overview-enter'
+            }
+          ]
+        }
       });
 
   });
