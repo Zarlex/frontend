@@ -1,7 +1,6 @@
-&.overview.ng-enter, &.view.ng-leave, &.view.ng-enter, &.view.ng-leave {
+&.overview.ng-enter, &.overview.ng-leave, &.overview.ng-enter, &.overview.ng-leave {
   @include single-transition(all, 1.1s, ease);
 }
-
 
 /* Overview -> Virtual Warfare */
 &.overview.index.virtual-warfare-enter.ng-leave { }
