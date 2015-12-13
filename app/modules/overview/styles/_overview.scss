@@ -196,7 +196,7 @@
         &:after{
           content: attr(zd-title);
           position: absolute;
-          top: 10%;
+          top: 200px;
           opacity: 0;
           transform: rotate(-90deg);
           @include transition(left 0.5s ease, opacity 1s ease);
@@ -257,16 +257,7 @@
 }
 
 .zd-modal {
-  .modal-body {
-    position: fixed;
-    top: 0;
-    max-height: 100%;
-    height: 100%;
-    background: transparent;
-    color: white;
-    padding: 14px 50px;
-    @include box-shadow(none);
-  }
+  @import "modal";
 }
 
 .spy-holder {

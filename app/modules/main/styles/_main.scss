@@ -219,17 +219,17 @@ body {
             transform: rotate(45deg);
 
             &.top {
-              top: 7px;
+              top: 6px;
             }
           }
           &.line-2 {
             transform: rotate(-45deg);
 
             &.top {
-              top: -7px;
+              top: -6px;
             }
             &.bottom {
-              top: -14px;
+              top: -12px;
             }
           }
         }
