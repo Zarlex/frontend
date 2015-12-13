@@ -107,7 +107,8 @@
   hr{
     border: none;
     height: 131px;
-    @include grid-bg(rgb(56,64,76), transparent)
+    margin: 0;
+    @include grid-bg($zdPrimary, transparent);
   }
 
   .collum1-btns-holder {
