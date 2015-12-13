@@ -1,0 +1,30 @@
+{
+  "experts": [
+    {
+      "id": "K_SAALBACH",
+      "name": "K. Saalbach",
+      "description": "Professor für Politikwissenschaften Osnabrück",
+      "quotes": [
+        "Zudem suchte Stuxnet auch nach weiteren geeigneten Systemen zu Infektion unter  Ausnutzung der sogenannten Autorun-Funktion von Windows. Stuxnet löscht sich nach einer bestimmten Zahl von erfolgreichen Infektionen selbst."
+      ]
+    },
+    {
+      "id": "SANDRO_GAYCKEN",
+      "name": "Sandro Gaycken",
+      "description": "Sicherheitsforscher FU Berlin",
+      "quotes": [
+        "Dagegen kann angeführt werden, dass Hackerangriffe eine Reihe taktischer Optionen bieten, die eine Bombe nicht bietet. Man kann es so aussehen lassen wie ein technisches Problem, einen Unfall oder wie einen Angriff einer dritten Macht, man kann den Zusammenbruch sehr genau steuern, man kann die Anlage danach wieder benutzen, Cyberangriffe können absolut unblutig sein und so für weniger Eskalation sorgen, und man ist vor allem nicht so leicht identifizierbar.",
+        "Das ist das besondere Problem der „Security of Security“. Normalerweise erwartet man von Sicherheitsprodukten, dass sie das vermeiden, was ihre Schutzgüter zu Schutzgütern macht: eigene Sicherheitslücken. Die Vergangenheit hat jedoch immer wieder deutlich gemacht, dass Sicherheitsprodukte genauso schlampig entwickelt werden wie alle andere Software. Sie haben also auch die gleichen Fehler und sind genauso angreifbar. Nur dass sie eigentlich Angriffsschutz bieten sollen und viele in kritischen Bereichen eingesetzt werden.",
+        "Ein Szenario – vielleicht das schwärzeste – wäre „der stille Ruin“. In diesem Fall werden die sich in Sicherheit wähnenden Informationsgesellschaften mit vielen Tausend kleinen Stichen in ihrer Wirtschaft, an ihren Infrastrukturen, an ihren Produktionsstraßen, an ihrer politischen Meinungsbildung und an ihren Militärs über Jahre kontinuierlich geschwächt. Niemand wird auf die Idee kommen, dass man sich in einem Krieg befindet. […] Trotzdem stellt man über die Jahre fest, dass die nationalen Wirtschaften immer stärker in den Keller gehen, dass die Wirtschaften konkurrierender geostrategischer Regionen florieren, dass Unternehmen nach Produktionsunglücken in andere Regionen verkauft werden, dass die Öffentlichkeit ideologisch infiltriert wird. All das wird so aussehen, als gäbe es immer gute Gründe, die alle nichts mit Hacken zu tun hätten. Aber die Wahrheit könnte sein, dass es sich einfach um eine gar nicht mal so breite Palette von hochqualifizierten Angriffen handelt, die die hochtechnisierten Industrienationen in den Ruin treiben und die deren Wohlstand in andere Regionen umschaufeln."
+      ]
+    },
+    {
+      "id": "RICHARD_CLARKE",
+      "name": "Richard A. Clarke",
+      "description": "US-Sicherheitsexperte",
+      "quotes": [
+        "Die wirklich guten Hacker, darunter die besten im Regierungsauftrag arbeitenden Teams in Ländern wie den Vereinigten Staaten und Russland, stoßen bei dem Versuch, in ein Rechnernetz einzudringen, selten auf ein unüberwindliches Hindernis […] Obendrein tun die Angreifer etwas, was die Verteidiger der Netzwerke wie Paranoiker aussehen lässt: Sie hinterlassen nie irgendwelche Spuren ihrer Besuche […] „Der Teufel hat sich nie einen besseren Trick einfallen lassen als den, der Welt weiszumachen, dass es ihn nicht gibt."
+      ]
+    }
+  ]
+}
