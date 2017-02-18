@@ -1,9 +1,49 @@
-.tmp
-.sass-cache
-.DS_Store
-.idea
-npm-debug.log
+### Angular 2
 
+# TypeScript
+**/*.js
+**/*.js.map
+
+# Project Exceptions
+!/webpack.config.js
+!/config/*
+
+# IntelliJ project files
+.idea
+*.iml
+
+# Ignored folders
+
+dist/
+
+# Ignored files
+config*.ts
+
+### Node template
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
 node_modules
-dist
-app/components
+jspm_packages
+
+# Optional npm cache directory
+.npm
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+### Sass template
+
+.sass-cache/
+*.css.map
+*.css
