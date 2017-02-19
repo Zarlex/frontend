@@ -10,7 +10,8 @@ import '@angular/router';
 import 'rxjs';
 
 // You can import js, ts, css, sass, ...
-import './main.scss';
+import './modules/main/components/main/main.style.scss';
+import '../fonts/zero-day.css';
 import '../favicon.ico';
 
 // Other vendors for example jQuery, Lodash or Bootstrap

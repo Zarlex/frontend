@@ -13,7 +13,7 @@ module.exports = {
   },
 
   resolve: {
-    modules: [path.resolve(__dirname, '/app'), 'node_modules/'],
+    modules: [path.resolve(__dirname, '/src/'), 'node_modules/'],
     descriptionFiles: ['package.json'],
     extensions: ['', '.js', '.ts', '.css']
   },
@@ -28,10 +28,6 @@ module.exports = {
         test: /\.html$/,
         loader: 'html'
       },
-      // {
-      //   test: /\.scss$/,
-      //   loaders: ["to-string-loader", "style-loader", "css-loader?sourceMap", "sass-loader?sourceMap"]
-      // },
       {
         test: /\.scss$/,
         loaders: ['raw-loader', 'sass-loader']
@@ -41,19 +37,19 @@ module.exports = {
         loaders: ['style-loader', 'css-loader']
       },
       {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.woff(\?.*)?$/,
         loader: "url?limit=10000&mimetype=application/font-woff"
       }, {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.woff2(\?.*)?$/,
         loader: "url?limit=10000&mimetype=application/font-woff"
       }, {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.ttf(\?.*)?$/,
         loader: "url?limit=10000&mimetype=application/octet-stream"
       }, {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.eot(\?.*)?$/,
         loader: "file"
       }, {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.svg(\?.*)?$/,
         loader: "url?limit=10000&mimetype=image/svg+xml"
       },
       {
