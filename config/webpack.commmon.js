@@ -13,7 +13,7 @@ module.exports = {
   },
 
   resolve: {
-    modules: [path.resolve(__dirname, '/src/'), 'node_modules/'],
+    modules: [path.resolve(__dirname, '/src/app'), 'node_modules/'],
     descriptionFiles: ['package.json'],
     extensions: ['', '.js', '.ts', '.css']
   },
@@ -37,20 +37,19 @@ module.exports = {
         loaders: ['style-loader', 'css-loader']
       },
       {
-        test: /\.woff(\?.*)?$/,
-        loader: "url?limit=10000&mimetype=application/font-woff"
-      }, {
-        test: /\.woff2(\?.*)?$/,
-        loader: "url?limit=10000&mimetype=application/font-woff"
-      }, {
+        test: /\.woff2?(\?.*)?$/,
+        loader: "url?limit=10000&mimetype=application/font-woff&name=fonts/[name].[hash].[ext]"
+      },
+      {
         test: /\.ttf(\?.*)?$/,
-        loader: "url?limit=10000&mimetype=application/octet-stream"
-      }, {
+        loader: "url?limit=10000&mimetype=application/octet-stream&name=fonts/[name].[hash].[ext]"
+      },
+      {
         test: /\.eot(\?.*)?$/,
-        loader: "file"
+        loader: "file?name=fonts/[name].[hash].[ext]"
       }, {
         test: /\.svg(\?.*)?$/,
-        loader: "url?limit=10000&mimetype=image/svg+xml"
+        loader: "url?limit=10000&mimetype=image/svg+xmlm&name=fonts/[name].[hash].[ext]"
       },
       {
         test: /\.(jpe?g|png|gif)(\?v=\d+\.\d+\.\d+)?$/i,
