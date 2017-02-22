@@ -7,12 +7,14 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {MainComponent}     from './components/main/main.component';
 import {MainRoutingModule}     from './main.routes';
 import {StartModule} from '../start/start.module';
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    SharedModule,
     MainRoutingModule,
     StartModule
   ],
