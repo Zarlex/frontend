@@ -1,0 +1,5 @@
+@mixin grid-bg($color1, $color2) {
+  background: linear-gradient(to bottom, transparent, transparent 80%, $color1 80%, $color1),
+  linear-gradient(to left, $color1, $color1 60%, $color2 60%, $color2);
+  background-size: 15px 47px;
+}
