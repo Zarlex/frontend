@@ -15,7 +15,5 @@ import '../fonts/zero-day.css';
 import '../favicon.ico';
 
 // Other vendors for example jQuery, Lodash or Bootstrap
-import 'jquery';
 import 'backbone';
 import 'underscore';
-import 'localforage';
