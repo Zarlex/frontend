@@ -1,4 +1,5 @@
 @import "variables.style";
+@import "mixins.style";
 
 html, body{
   padding: 0;
@@ -11,4 +12,20 @@ html, body{
   width: 100%;
   height: 100%;
   position: relative;
+}
+
+.views{
+
+}
+
+
+html{
+  overflow: hidden;
+  width:100%;
+}
+body{
+  height:100%;
+  position:fixed; /* prevent overscroll bounce*/
+  overflow-y:scroll;
+  -webkit-overflow-scrolling: touch; /* iOS velocity scrolling */
 }
