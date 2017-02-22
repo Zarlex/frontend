@@ -64,7 +64,9 @@ module.exports = {
         ]
       }
     ],
-    noParse: [new RegExp('./node_modules/localforage/dist/localforage.js')]
+    noParse: [
+      new RegExp('./node_modules/localforage/dist/localforage.js')
+    ]
   },
 
   plugins: [
