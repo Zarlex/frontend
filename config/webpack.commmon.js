@@ -52,9 +52,9 @@ module.exports = {
         loader: "url?limit=10000&mimetype=image/svg+xmlm&name=fonts/[name].[hash].[ext]"
       },
       {
-        test: /\.(jpe?g|png|gif)(\?v=\d+\.\d+\.\d+)?$/i,
+        test: /\.(jpe?g|png|gif)?$/i,
         loaders: [
-          'file?hash=sha512&digest=hex&name=[name].[hash].[ext]'
+          'file?hash=sha512&digest=hex&name=images/[name].[hash].[ext]'
         ]
       },
       {
