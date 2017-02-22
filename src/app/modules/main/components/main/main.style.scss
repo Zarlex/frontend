@@ -1,5 +1,14 @@
-.main {
-  h1{
-    color: red
-  }
+@import "variables.style";
+
+html, body{
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $zdGray;
+}
+
+.full-screen{
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
