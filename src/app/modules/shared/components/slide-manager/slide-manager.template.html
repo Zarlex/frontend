@@ -1,0 +1,16 @@
+<div class="slide-manager">
+  <ng-content></ng-content>
+
+  <div class="indicator next" *ngIf="hasNextSlide()">
+    <div class="progress" [style.height]="test+'%'"></div>
+  </div>
+
+  <div class="indicator previous" *ngIf="hasPreviousSlide()">
+    <div class="progress" [style.height]="test2+'%'"></div>
+  </div>
+
+  <div scrollNavigator
+       (scrollBottomProgress)="scrollBottomProgress($event)"
+       (scrollTopProgress)="scrollTopProgress($event)"></div>
+  {{test}}
+</div>

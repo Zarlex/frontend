@@ -1,0 +1,26 @@
+.slide-manager{
+
+  .indicator{
+    position: fixed;
+    left: 50%;
+    width: 5px;
+    height: 100px;
+    background: grey;
+
+    &.next{
+      bottom: 0;
+    }
+
+    &.previous{
+      top: 0;
+    }
+
+    .progress{
+      background: red;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
