@@ -1,30 +1,41 @@
 <section class="start-view">
-  <section full-screen-view class="intro-screen">
-    <i class="icon-Logo_gross logo"></i>
-  </section>
+  <slide-manager>
+    <slide>
+      <section full-screen-view class="intro-screen">
+        <i class="icon-Logo_gross logo"></i>
+        <a [routerLink]="['/intro']">
+          <i class="icon-Logo_gross"></i>
+        </a>
+      </section>
+    </slide>
 
-  <intro-view></intro-view>
+    <slide>
+      <intro-view></intro-view>
+    </slide>
 
-  <section full-screen-view class="menu">
-      <div class="item item-1">
-        <div class="holder">
-          <img src="./warfare_logo.png">
-        </div>
-      </div>
-      <div class="item item-2">
-        <div class="holder">
-          <i class="icon-real-impacts_logo logo"></i>
-        </div>
-      </div>
-      <div class="item item-3">
-        <div class="holder">
-          <i class="icon-current-attacks_logo logo"></i>
-        </div>
-      </div>
-      <div class="item item-4">
-        <div class="holder">
-          <i class="icon-potential-threats_logo logo"></i>
-        </div>
-      </div>
-  </section>
+   <slide>
+     <section full-screen-view class="menu">
+       <div class="item item-1">
+         <div class="holder">
+           <img src="./warfare_logo.png">
+         </div>
+       </div>
+       <div class="item item-2">
+         <div class="holder">
+           <i class="icon-real-impacts_logo logo"></i>
+         </div>
+       </div>
+       <div class="item item-3">
+         <div class="holder">
+           <i class="icon-current-attacks_logo logo"></i>
+         </div>
+       </div>
+       <div class="item item-4">
+         <div class="holder">
+           <i class="icon-potential-threats_logo logo"></i>
+         </div>
+       </div>
+     </section>
+   </slide>
+  </slide-manager>
 </section>
