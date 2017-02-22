@@ -13,7 +13,7 @@ module.exports = {
   },
 
   resolve: {
-    modules: [path.resolve(__dirname, '/src/app'), path.resolve(__dirname, '/src/fonts'), 'node_modules/'],
+    modules: [path.resolve(__dirname, '/src/app'), path.resolve(__dirname, '/src/fonts'), path.resolve('node_modules/')],
     descriptionFiles: ['package.json'],
     extensions: ['', '.js', '.ts', '.css']
   },
