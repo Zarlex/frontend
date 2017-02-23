@@ -1,6 +1,5 @@
 import {Component, OnInit, EventEmitter, Output, HostListener} from '@angular/core';
-import {debounce} from 'underscore';
-import {ScrollNavigatorDirective} from '../../directives/scroll-navigator.directive';
+import {animate, animate2} from '../../animate';
 
 @Component({
   moduleId: module.id.toString(),
@@ -27,7 +26,7 @@ export class SlideManagerComponent implements OnInit {
 
   addSlide(slide: any) {
     if (this.slides.length === 0) {
-      slide.opened = true;
+      slide.open();
     }
     this.slides.push(slide);
   }
@@ -42,35 +41,52 @@ export class SlideManagerComponent implements OnInit {
 
   openPreviousSlide() {
     if (this.hasPreviousSlide()) {
-      this.slides[this.displayIndex].opened = false;
+      let currentSlide = this.slides[this.displayIndex];
+      //this.slides[this.displayIndex].close();
       this.displayIndex--;
       let nextSlide = this.slides[this.displayIndex];
-      nextSlide.opened = true;
-      this.opened.emit({openedSlide: nextSlide});
+      nextSlide.open();
+      window.requestAnimationFrame(() => {
+        window.scrollTo(0, nextSlide.getHeight());
+        animate2(window.scrollY, 0, (scrollTo: number) => {
+          window.scrollTo(0, scrollTo);
+        }, 500).then(() => {
+          currentSlide.close();
+          this.opened.emit({openedSlide: nextSlide});
+        });
+      });
     }
   }
 
   openNextSlide() {
     if (this.hasNextSlide()) {
-      this.slides[this.displayIndex].opened = false;
+      let currentSlide = this.slides[this.displayIndex];
+      //this.slides[this.displayIndex].close();
       this.displayIndex++;
       let nextSlide = this.slides[this.displayIndex];
-      nextSlide.opened = true;
-      this.opened.emit({openedSlide: nextSlide});
+      nextSlide.open();
+      window.requestAnimationFrame(()=>{
+        animate2(window.scrollY, window.scrollY + window.innerHeight, (scrollTo: number) => {
+          window.scrollTo(0, scrollTo);
+        }, 500).then(() => {
+          currentSlide.close();
+          this.opened.emit({openedSlide: nextSlide});
+        });
+      });
     }
   }
 
-  scrollBottomProgress(progressY: number){
+  scrollBottomProgress(progressY: number) {
     this.test = progressY;
-    if(progressY>=100){
+    if (progressY >= 100) {
       this.openNextSlide();
     }
     console.log('PROGRESS', progressY)
   }
 
-  scrollTopProgress(progressY: number){
+  scrollTopProgress(progressY: number) {
     this.test2 = progressY;
-    if(progressY>=100){
+    if (progressY >= 100) {
       this.openPreviousSlide();
     }
     console.log('PROGRESS', progressY)
