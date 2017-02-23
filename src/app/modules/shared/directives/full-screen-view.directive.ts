@@ -1,4 +1,4 @@
-import {Directive, ElementRef, OnInit, HostListener, AfterContentInit} from '@angular/core';
+import {Directive, ElementRef, OnInit, HostListener, AfterContentInit, Input} from '@angular/core';
 import {debounce} from 'underscore';
 
 @Directive({
@@ -10,12 +10,28 @@ export class FullScreenViewDirective implements OnInit {
 
   }
 
+  @Input()
+  public setMinHeight: boolean = false;
+
+  @Input()
+  public setMinWidth: boolean = false;
+
   private setSize(): void {
     let winHeight = window.innerHeight;
-    let elHeight = this.el.nativeElement.offsetHeight;
-    let height = elHeight > winHeight ? elHeight : winHeight;
-    this.el.nativeElement.style.width = `${window.innerWidth}px`;
-    this.el.nativeElement.style.height = `${height}px`;
+    let winWidth = window.innerWidth;
+
+    if(this.setMinWidth){
+      this.el.nativeElement.style.minWidth = `${winWidth}px`;
+    } else {
+      this.el.nativeElement.style.width = `${winWidth}px`;
+    }
+
+    if(this.setMinHeight){
+      this.el.nativeElement.style.minHeight = `${winHeight}px`;
+    } else {
+      this.el.nativeElement.style.height = `${winHeight}px`;
+    }
+
   }
 
   private debouncedSetSize: any = debounce(this.setSize, 100);
