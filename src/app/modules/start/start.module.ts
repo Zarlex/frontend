@@ -6,12 +6,14 @@ import {StartRoutingModule}     from './start.routes';
 import {StartViewComponent}     from './components/start-view/start-view.component';
 import {SharedModule} from '../shared/shared.module';
 import {IntroViewComponent} from './components/intro-view/intro-view.component';
+import {OverviewModule} from '../overview/overview.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     SharedModule,
+    OverviewModule,
     StartRoutingModule
   ],
   declarations: [

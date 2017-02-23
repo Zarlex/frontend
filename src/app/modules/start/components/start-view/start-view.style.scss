@@ -4,7 +4,7 @@
 .start-view{
   @include grid-bg(#05ee66, #00ff69);
 
-  .intro-screen{
+  .splash{
     text-align: center;
     display: flex;
     justify-content: center;
@@ -12,64 +12,6 @@
 
     .logo{
       font-size: 35vw;
-    }
-  }
-
-  .menu{
-    width: inherit;
-    display: flex;
-    @media (max-width: 576px) {
-      flex-direction: column;
-    }
-
-    .item{
-      height: 100%;
-      flex-basis: 25%;
-      transition: flex-basis 0.5s ease;
-      overflow: hidden;
-
-      &.item-1{
-        background: $zdGreen25;
-      }
-
-      &.item-2{
-        background: $zdGreen50;
-      }
-
-      &.item-3{
-        background: $zdGreen75;
-      }
-
-      &.item-4{
-        background: $zdGreen100;
-      }
-
-      .holder{
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        width: 50vw;
-
-        .logo{
-          font-size: 50vw;
-        }
-
-        img{
-          width: 80%;
-          margin: auto;
-        }
-      }
-
-      &:hover{
-        flex-basis: 75%;
-
-        .holder{
-          img{
-            transform: scale(1);
-          }
-        }
-      }
     }
   }
 }
